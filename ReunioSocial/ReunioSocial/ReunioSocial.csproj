@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Escenari.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Posicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
