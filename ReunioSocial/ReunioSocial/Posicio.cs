@@ -64,7 +64,7 @@ namespace ReunioSocial
         /// <returns>Distància entre les dues posicions</returns>
         public static double Distancia (Posicio pos1, Posicio pos2)
         {
-            return 0;
+            return 1;
         }
     }
 }
