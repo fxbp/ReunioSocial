@@ -8,8 +8,10 @@ namespace ReunioSocial
 {
     public class Posicio
     {
-        int columna;
-        int fila;
+        protected enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra}
+
+        protected int columna;
+        protected int fila;
         /// <summary> 
         /// Crea una nova posició 
         /// </summary>  
@@ -64,7 +66,26 @@ namespace ReunioSocial
         /// <returns>Distància entre les dues posicions</returns>
         public static double Distancia (Posicio pos1, Posicio pos2)
         {
-            return 2;
+            double distancia = 0;
+            double distBase=0;
+            double distAlt=0;
+            if (!(pos1.fila==pos2.fila&&pos1.columna==pos2.columna))
+            {
+                distAlt=Math.Abs(pos2.fila - pos1.fila);
+                distBase=Math.Abs(pos2.columna - pos1.columna);
+                distancia = Pitagoras(distAlt, distBase);
+            }
+
+            return distancia;
+        }
+
+        private static double Pitagoras(double distancia1, double distancia2)
+        {
+            double pitagoras = 0;
+
+            pitagoras = Math.Abs((Math.Pow(distancia1, 2)+ Math.Pow(distancia2, 2)));
+
+            return pitagoras;
         }
     }
 }
