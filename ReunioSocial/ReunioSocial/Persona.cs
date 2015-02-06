@@ -8,6 +8,6 @@ namespace ReunioSocial
 {
     class Persona:Posicio
     {
-
+        ///
     }
 }
