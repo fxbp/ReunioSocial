@@ -19,8 +19,21 @@ namespace ReunioSocial
         /// <param name="pos">posició per la que s'interessa</param>/// <returns>Retorna 0 si no hi ha ningú, 1 si hi ha un convidat i -1 si un cambrer</returns>
         public override int Interes(Posicio pos)
         {
-            
-            return 0;
+            int resultat=0;
+            Persona p;
+            if(!pos.Buida)
+            {
+                if (pos is Persona)
+                {
+                    p = (Persona)pos;
+
+                    if (p.EsConvidat())
+                        resultat = 1;
+                    else
+                        resultat = -1;
+                }
+            }
+            return resultat;
         }
         /// <summary>
         /// Retorna que el Cambrer no és un convidat

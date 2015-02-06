@@ -86,19 +86,13 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="pos">Posició</param>
         /// <returns>Interès quantificat</returns>
-        public abstract int Interes(Posicio pos)
-        {
-            return 0;
-        }
+        public abstract int Interes(Posicio pos);
 
 
         /// <summary>
         /// Determina si la persona es un convidat (home o dona) o un cambrer
         /// </summary>
         /// <returns>Retorna si és convidat</returns>
-        public abstract bool EsConvidat() 
-        {
-            return false;
-        }
+        public abstract bool EsConvidat();
     }
 }
