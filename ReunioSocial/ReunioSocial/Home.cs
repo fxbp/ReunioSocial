@@ -15,7 +15,11 @@ namespace ReunioSocial
         /// <param name="simpa">Taula de simpaties</param>
         /// <param name="sexe">Plus de simpatia envers del sexe contrari</param>
         public Home(string nom, int[] simpa, int sexe)
-        { }
+        {
+            this.nom = nom;
+            this.simpaties = simpa;
+            this.plusSexe = sexe;
+        }
 
 
         /// <summary>
@@ -24,7 +28,10 @@ namespace ReunioSocial
         /// <param name="nom">String que l'identificarà</param>
         /// <param name="sexe">Plus de simpatia envers del sexe contrari</param>
         public Home(string nom, int sexe)
-        { }
+        {
+            this.nom = nom;
+            this.plusSexe = sexe;
+        }
 
 
         /// <summary>
@@ -34,7 +41,21 @@ namespace ReunioSocial
         /// <returns>Interès quantificat</returns>
         public override int Interes(Posicio pos)
         {
-            return null;S        
+            int resultat = 0;
+            if (pos.Buida) resultat = 0;
+            else
+            {
+                Persona p = (Persona)pos;
+                if (p.EsConvidat())
+                {
+
+                }
+                else
+                    resultat = 0;
+            }
+
+
+            return resultat;
         }
     }
 }
