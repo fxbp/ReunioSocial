@@ -10,6 +10,7 @@ namespace ReunioSocial
     {
         protected enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra}
 
+       
         protected int columna;
         protected int fila;
         /// <summary> 
@@ -21,6 +22,7 @@ namespace ReunioSocial
         {
             columna = col;
             fila = fil;
+            
         }
 
         /// <summary> 
