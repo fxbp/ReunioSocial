@@ -40,7 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cambrer.cs" />
+    <Compile Include="Convidat.cs" />
+    <Compile Include="Dona.cs" />
     <Compile Include="Escenari.cs" />
+    <Compile Include="Home.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Posicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
