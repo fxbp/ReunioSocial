@@ -10,6 +10,7 @@ namespace ReunioSocial
     {
 
         protected string nom;
+        
 
 
         /// <summary>
@@ -19,7 +20,8 @@ namespace ReunioSocial
         /// <param name="fil">Fila on està localitzada</param>
         /// <param name="col">Columna on està localitzada</param>
         public Persona(string nom, int fil, int col): base(fil, col)
-        {}
+        { 
+        }
 
 
         /// <summary>
