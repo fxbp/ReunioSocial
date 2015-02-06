@@ -19,6 +19,7 @@ namespace ReunioSocial
         /// <param name="pos">posició per la que s'interessa</param>/// <returns>Retorna 0 si no hi ha ningú, 1 si hi ha un convidat i -1 si un cambrer</returns>
         public override int Interes(Posicio pos)
         {
+            
             return 0;
         }
         /// <summary>

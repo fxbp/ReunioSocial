@@ -76,7 +76,9 @@ namespace ReunioSocial
         /// <param name="esc">Escenari on esta situada la persona</param>
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
         public Direccio OnVaig(Escenari esc)
-        { }
+        {
+            return Direccio.Amunt;
+        }
 
 
         /// <summary>
@@ -85,13 +87,18 @@ namespace ReunioSocial
         /// <param name="pos">Posició</param>
         /// <returns>Interès quantificat</returns>
         public abstract int Interes(Posicio pos)
-        { }
+        {
+            return 0;
+        }
 
 
         /// <summary>
         /// Determina si la persona es un convidat (home o dona) o un cambrer
         /// </summary>
         /// <returns>Retorna si és convidat</returns>
-        public abstract bool EsConvidat() { }
+        public abstract bool EsConvidat() 
+        {
+            return false;
+        }
     }
 }
