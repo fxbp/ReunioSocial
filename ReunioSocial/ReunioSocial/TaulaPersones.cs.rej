@@ -1,0 +1,15 @@
+diff a/ReunioSocial/ReunioSocial/TaulaPersones.cs b/ReunioSocial/ReunioSocial/TaulaPersones.cs	(rejected hunks)
+@@ -6,11 +6,9 @@
+ 
+ namespace ReunioSocial
+ {
+-    class TaulaPersones
++    public class TaulaPersones
+     {
+-
+-
+-        private Dictionary<string,Persona> gent;
++        private Dictionary<string, Persona> gent;
+ 
+         public Dictionary<string, Persona> Gent
+         {

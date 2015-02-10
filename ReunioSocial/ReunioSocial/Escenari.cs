@@ -8,34 +8,52 @@ namespace ReunioSocial
 {
     public class Escenari
     {
+        Posicio[,] escenari;
+        TaulaPersones persones = new TaulaPersones();
+        int files;
+        int columnes;
+        int nDones;
+        int nHomes;
+        int nCambrers;
+
         /// <summary>
         /// Crea un escenari donades unes mides
         /// </summary>
         /// <param name="files">Número de files de l'escenari</param>
         /// <param name="columnes">Número de columnes de l'escenari</param>
-        public Escenari(int files, int columnes)
-        {  }
+        public Escenari(int f, int c)
+        {
+            files = f;
+            columnes = c;
+            escenari=new Posicio[files,columnes];
+        }
 
 
         /// <summary>
         /// Retorna el número de files de l'escenari
         /// </summary>
         public int Files
-        { get; }
+        { 
+            get { return files; } 
+        }
 
 
         /// <summary>
         /// Retorna el número de columnes de l'escenari
         /// </summary>
         public int Columnes
-        { get; }
+        {
+            get { return columnes; }
+        }
 
 
         /// <summary>
         /// Retorna el número de homes que hi ha dins de l'escenari
         /// </summary>
         public int Homes
-        { get; }
+        {
+            get { return nHomes; }
+        }
 
 
         /// <summary>
@@ -49,7 +67,9 @@ namespace ReunioSocial
         /// Retorna el número de Cambrers que hi ha dins de l'escenari
         /// </summary>
         public int Cambrers
-        { get; }
+        {
+            get { return nCambrers; }
+        }
 
 
         /// <summary>
@@ -63,15 +83,17 @@ namespace ReunioSocial
         /// <param name="colDesti">Columna de la coordenada de destí</param>
         private void Moure(int filOrig, int colOrig, int filDesti, int colDesti)
         {
-
+            Posicio aux = escenari[filDesti, colDesti];
+            escenari[filDesti, colDesti] = escenari[filOrig, colOrig];
+            escenari[filOrig, colOrig] = aux;
         }
 
         /// <summary>
         /// Retorna la Posició que hi ha en una coordenada donada
         /// </summary>
-        public Posicio this[int fila, int col]
+        public Posicio this[int fil, int col]
         {
-            get;
+            get { return escenari[fil, col]; }
         }
 
 
@@ -83,7 +105,7 @@ namespace ReunioSocial
         /// <returns>retorna si la coordenada és vàlida i està buida</returns>
         public bool DestiValid(int fil, int col)
         {
-            return false;
+            return (fil <= Files && col <= Columnes) && escenari[fil, col].Buida;       
         }
 
 
@@ -94,7 +116,25 @@ namespace ReunioSocial
         /// <returns>Matriu de caràcters</returns>
         public String[,] ContingutNoms()
         {
-            return null;
+            string[,] contingut = new string[files, columnes];
+
+            for (int i = 0; i < files; i++)
+            {
+                for (int j = 0; j < columnes; j++)
+                {
+                    if (escenari[i, j] is Persona)
+                    {
+                        Persona p = (Persona)(escenari[i, j]);
+                        contingut[i, j] = p.Nom;
+                    }
+                    else
+                    {
+                        contingut[i, j] = "0";
+                    }
+                }
+            }
+
+            return contingut;
         }
 
 
@@ -104,7 +144,14 @@ namespace ReunioSocial
         /// <param name="fil">Fila on està la persona</param>
         /// <param name="col">Columna on està la persona</param>
         public void buidar(int fil, int col)
-        { }
+        {
+            if (escenari[fil, col] is Persona)
+            {
+                Persona p = (Persona)escenari[fil, col];
+                escenari[fil, col] = new Posicio();
+                persones.Eliminar(p.Nom);
+            }
+        }
 
 
         /// <summary>
@@ -113,7 +160,14 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="pers">Persona a afegir</param>
         public void posar(Persona pers)
-        { }
+        {
+            if (escenari[pers.Fila, pers.Columna].Buida)
+            {
+                escenari[pers.Fila, pers.Columna] = pers;
+            }
+            else
+                throw new Exception("La posicio ja està ocupada!!");
+        }
 
 
         /// <summary>
@@ -123,13 +177,50 @@ namespace ReunioSocial
         /// <returns>Si hi ha coincidència</returns>
         public bool NomRepetit(string nom)
         {
-            return false;
+            bool repetit = false;
+            string[,] noms = ContingutNoms();
+            for (int i = 0; i < files; i++)
+            {
+                for (int j = 0; j < columnes; j++)
+                {
+                    string n = noms[i, j];
+                    repetit = n == nom;                  
+                }
+            }
+            return repetit;
         }
 
         /// <summary>
         /// Fa que totes les persones facin un moviment
         /// </summary>
         public void Cicle()
-        { }
+        {
+            
+
+        }
+
+        /// <summary>
+        /// Conta les dones, homes i cambrers que hi son a la taula
+        /// </summary>
+        private void ContarPersones()
+        {
+            nDones = 0;
+            nHomes = 0;
+            nCambrers = 0;
+            for(int i=0;i<files;i++)
+            {
+                for(int j=0; j<columnes;j++)
+                {
+                    if (escenari[i, j] is Dona)
+                        nDones++;
+                    else if (escenari[i, j] is Home)
+                        nHomes++;
+                    else if (escenari[i, j] is Cambrer)
+                        nCambrers++;
+  
+                }
+            }
+        }
+
     }
 }
