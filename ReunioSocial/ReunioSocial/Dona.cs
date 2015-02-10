@@ -44,7 +44,20 @@ namespace ReunioSocial
         /// <returns>Interès quantificat</returns>
         public override int Interes(Posicio pos)
         {
-            return 0;
+            int resultat = 0;
+            Persona p;
+            if (!pos.Buida)
+            {
+                if (pos is Persona)
+                {
+                    p = (Persona)pos;
+
+                    if (p.EsConvidat())
+                        resultat = 1;
+                    
+                }
+            }
+            return resultat;
         }
     }
 }
