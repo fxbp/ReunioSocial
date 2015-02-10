@@ -21,6 +21,7 @@ namespace ReunioSocial
         /// Assigna o obté una persona de la taula
         /// </summary>
         public Persona this[string nom]
+       
         { get  ;
             set; }
         /// <summary>
