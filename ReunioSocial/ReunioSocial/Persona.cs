@@ -53,7 +53,7 @@ namespace ReunioSocial
         /// </summary>
         public override bool Buida
         {
-            get;
+            get { return false; }
         }
 
 
