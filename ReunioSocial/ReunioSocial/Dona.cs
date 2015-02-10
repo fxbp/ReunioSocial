@@ -48,14 +48,20 @@ namespace ReunioSocial
             Persona p;
             if (!pos.Buida)
             {
-                if (pos is Persona)
-                {
-                    p = (Persona)pos;
+                
+                    if(((Persona)pos).EsConvidat())
+                    {
+                        if(pos is Dona)
+                        {
+                            resultat=0;
+                        }
+                        else
+                        {
+                            resultat+=plusSexe;
+                        }
 
-                    if (p.EsConvidat())
-                        resultat = 1;
-                    
-                }
+                    }  
+               
             }
             return resultat;
         }
