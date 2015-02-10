@@ -20,7 +20,8 @@ namespace ReunioSocial
         /// <param name="fil">Fila on està localitzada</param>
         /// <param name="col">Columna on està localitzada</param>
         public Persona(string nom, int fil, int col): base(fil, col)
-        { 
+        {
+            this.nom = nom;
         }
 
 
@@ -29,7 +30,9 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="nom">nom de la persona</param>
         public Persona(string nom)
-        { }
+        {
+            this.nom = nom;
+        }
 
 
         /// <summary>
@@ -66,7 +69,26 @@ namespace ReunioSocial
         /// <returns>Atracció quantificada</returns>
         private double Atraccio(int fil, int col, Escenari esc)
         {
-            return 0;
+            double resultat = 0;
+            double distancia = 0;
+            Posicio referencia = new Posicio(fil, col);
+            Posicio actual;
+            int interes;
+            for (int i = 0; i < esc.Files; i++)
+            {
+                for(int j=0;j<esc.Columnes;j++)
+                {
+                    actual = esc[i, j];
+                    if (!actual.Buida&&actual!=this)
+                    {
+                        distancia = Posicio.Distancia(referencia, actual);
+                        interes = Interes(actual);
+                        resultat += interes / distancia;
+                    }
+                }
+            }
+
+            return resultat;
         }
 
 
