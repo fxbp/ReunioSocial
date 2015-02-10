@@ -79,7 +79,7 @@ namespace ReunioSocial
                 for(int j=0;j<esc.Columnes;j++)
                 {
                     actual = esc[i, j];
-                    if (!actual.Buida)
+                    if (!actual.Buida&&actual!=this)
                     {
                         distancia = Posicio.Distancia(referencia, actual);
                         interes = Interes(actual);
