@@ -27,7 +27,7 @@ namespace ReunioSocial
 
 
 
-        public Convidat();
+        public Convidat(){}
 
         /// <summary>
         /// Crea un convidat

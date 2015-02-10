@@ -97,11 +97,11 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="esc">Escenari on esta situada la persona</param>
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
-        public Direccio OnVaig(Escenari esc)
+       /* public Direccio OnVaig(Escenari esc)
         {
             // HA DE VALORAR L'ATRACCIÓ AMB MÉS PES.
             return Direccio.Amunt;
-        }
+        }*/
 
 
         /// <summary>

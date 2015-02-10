@@ -60,7 +60,10 @@ namespace ReunioSocial
         /// Retorna el número de dones que hi ha dins de l'escenari
         /// </summary>
         public int Dones
-        { get; }
+        {
+            // Falta implementar
+            get { return 0; } 
+        }
 
 
         /// <summary>

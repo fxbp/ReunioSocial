@@ -1,0 +1,4 @@
+E:\2n\finalinterficies\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.dll
+E:\2n\finalinterficies\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.pdb
+E:\2n\finalinterficies\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.dll
+E:\2n\finalinterficies\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.pdb

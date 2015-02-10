@@ -1,0 +1,8 @@
+E:\2n\finalinterficies\ReunioSocial\test\bin\Debug\test.exe.config
+E:\2n\finalinterficies\ReunioSocial\test\bin\Debug\test.exe
+E:\2n\finalinterficies\ReunioSocial\test\bin\Debug\test.pdb
+E:\2n\finalinterficies\ReunioSocial\test\bin\Debug\ReunioSocial.dll
+E:\2n\finalinterficies\ReunioSocial\test\bin\Debug\ReunioSocial.pdb
+E:\2n\finalinterficies\ReunioSocial\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+E:\2n\finalinterficies\ReunioSocial\test\obj\Debug\test.exe
+E:\2n\finalinterficies\ReunioSocial\test\obj\Debug\test.pdb
