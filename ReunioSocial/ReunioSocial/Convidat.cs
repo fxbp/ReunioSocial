@@ -8,7 +8,7 @@ namespace ReunioSocial
 {
     public abstract class Convidat : Persona
     {
-        protected int[] simpaties;
+        protected Dictionary<string, int> simpaties;
         protected int plusSexe;
         /// <summary>
         /// Crea un convidat
@@ -17,7 +17,14 @@ namespace ReunioSocial
         /// <param name="simp">Taula de simpaties</param>
         /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
         public Convidat(string nom, int[] simp, int sexe)
-        { }
+        {
+            simpaties = new Dictionary<string, int>();
+            
+        }
+
+
+
+
 
 
         public Convidat();

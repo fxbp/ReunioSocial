@@ -20,7 +20,7 @@ namespace ReunioSocial
             : base(nom, simpa, sexe)
         {
             this.nom = nom;
-            this.simpaties = simpa;
+            //Hem de reinicialitzar el diccionari de dones.
             this.plusSexe = sexe;
         }
 
