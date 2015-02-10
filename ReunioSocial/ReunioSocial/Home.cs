@@ -17,7 +17,7 @@ namespace ReunioSocial
         public Home(string nom, int[] simpa, int sexe)
         {
             this.nom = nom;
-            this.simpaties = simpa;
+            //Hem de reinicialitzar el diccionari de persones.
             this.plusSexe = sexe;
         }
 
@@ -48,14 +48,25 @@ namespace ReunioSocial
                 Persona p = (Persona)pos;
                 if (p.EsConvidat())
                 {
-
+                    if (p is Dona)
+                    {
+                        resultat += ((Dona)p).PlusSexe;
+                        //Cal afegir la simpatia, s'ha d'accedir a la propietat retornasimpatia.
+                    }
+                    else
+                    {
+                        resultat = 0;
+                    }
                 }
                 else
-                    resultat = 0;
+                    resultat = 1;
             }
-
-
             return resultat;
+        }
+
+        public override string ToString()
+        {
+            return this.Nom;
         }
     }
 }
