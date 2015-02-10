@@ -8,11 +8,22 @@ namespace ReunioSocial
 {
     public class Cambrer : Persona
     {
+        private static int nCambrer;
+
+        public static int NCambrer
+        {
+            get { return Cambrer.nCambrer; }
+            set { Cambrer.nCambrer = value; }
+        }
+
         /// <summary>
         /// Crea un cambrer (Persona de la que no importa el nom, i es dirà "Cambrer 1",
         /// "Cambrer 2", "Cambrer 3", "Cambrer 4" ... "CambrerN"/// </summary>
         public Cambrer()
-        { }
+        {
+            NCambrer++;
+            this.nom = "Cambrer" + NCambrer;
+        }
         /// <summary>
         /// Interès del cambrer per una posició
         /// </summary>

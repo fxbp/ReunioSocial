@@ -8,6 +8,7 @@ namespace ReunioSocial
 {
     public class Posicio
     {
+        // protected per que tothom la vegi
         protected enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra}
 
        
@@ -81,6 +82,12 @@ namespace ReunioSocial
             return distancia;
         }
 
+        /// <summary>
+        /// Privada per el càlcul de la distància.
+        /// </summary>
+        /// <param name="distancia1"></param>
+        /// <param name="distancia2"></param>
+        /// <returns></returns>
         private static double Pitagoras(double distancia1, double distancia2)
         {
             double pitagoras = 0;
