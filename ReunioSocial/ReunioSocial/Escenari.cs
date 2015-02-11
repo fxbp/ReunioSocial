@@ -62,7 +62,7 @@ namespace ReunioSocial
         public int Dones
         {
             // Falta implementar
-            get { return 0; } 
+            get { return nDones; } 
         }
 
 

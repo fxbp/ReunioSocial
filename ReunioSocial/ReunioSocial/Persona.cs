@@ -10,7 +10,8 @@ namespace ReunioSocial
     {
 
         protected string nom;
-        
+        // Aleatori que s'utilitza per la direcció.
+        private Random r = new Random();
 
 
         /// <summary>
@@ -91,13 +92,38 @@ namespace ReunioSocial
             return resultat;
         }
 
+        /// <summary>
+        /// Mètode atracció sobre taula de persones.
+        /// </summary>
+        /// <param name="fil"></param>
+        /// <param name="col"></param>
+        /// <param name="tp"></param>
+        /// <returns></returns>
+        private double Atracció(int fil, int col, TaulaPersones tp)
+        {
+            double resultat = 0;
+            double distancia = 0;
+            Posicio referencia = new Posicio(fil, col);
+            int interes;
+            foreach (Persona p in tp.Gent.Values)
+            {
+                if (p != this)
+                {
+                    distancia = Posicio.Distancia(referencia, p);
+                    interes = Interes(p);
+                    resultat += interes / distancia;
+                }
+            }
+            return resultat;
+        }
+
 
         /// <summary>
         /// Decideix quin serà el següent moviment que farà la persona
         /// </summary>
         /// <param name="esc">Escenari on esta situada la persona</param>
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
-        public Direccio OnVaig(Escenari esc)
+        protected Direccio OnVaig(Escenari esc)
         {
             // HA DE VALORAR L'ATRACCIÓ AMB MÉS PES.
  
@@ -113,11 +139,14 @@ namespace ReunioSocial
             if (esc.DestiValid(fila, columna - 1)) esquerra = Atraccio(fila, columna - 1, esc);
             if (esc.DestiValid(fila, columna + 1)) dreta = Atraccio(fila, columna + 1, esc);
 
+
             
             Direccio triada = Direccio.Amunt;
 
             return triada;
         }
+
+        
 
 
         /// <summary>
@@ -133,5 +162,11 @@ namespace ReunioSocial
         /// </summary>
         /// <returns>Retorna si és convidat</returns>
         public abstract bool EsConvidat();
+
+
+        
+
     }
+
+   
 }
