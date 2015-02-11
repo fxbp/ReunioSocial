@@ -97,11 +97,27 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="esc">Escenari on esta situada la persona</param>
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
-       /* public Direccio OnVaig(Escenari esc)
+        public Direccio OnVaig(Escenari esc)
         {
             // HA DE VALORAR L'ATRACCIÓ AMB MÉS PES.
-            return Direccio.Amunt;
-        }*/
+ 
+            double dreta = 0;
+            double esquerra = 0;
+            double amunt = 0;
+            double avall = 0;
+            double quiet = 0;
+
+            quiet=Atraccio(fila,columna,esc);
+            if (esc.DestiValid(fila + 1, columna)) avall = Atraccio(fila + 1, columna, esc);
+            if (esc.DestiValid(fila - 1, columna)) amunt = Atraccio(fila - 1, columna, esc);
+            if (esc.DestiValid(fila, columna - 1)) esquerra = Atraccio(fila, columna - 1, esc);
+            if (esc.DestiValid(fila, columna + 1)) dreta = Atraccio(fila, columna + 1, esc);
+
+            
+            Direccio triada = Direccio.Amunt;
+
+            return triada;
+        }
 
 
         /// <summary>
