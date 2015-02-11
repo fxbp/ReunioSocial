@@ -127,7 +127,7 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="esc">Escenari on esta situada la persona</param>
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
-        protected Direccio OnVaig(Escenari esc)
+        public Direccio OnVaig(Escenari esc)
         {
             //Genero un graudirecció nou que m'ajudarà a calcular i a fer el codi del on vaig més senzill 
             // Aquesta clase per defecte s'instancia amb els valors a 0.
