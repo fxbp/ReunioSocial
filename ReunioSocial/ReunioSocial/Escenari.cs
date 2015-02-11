@@ -198,9 +198,50 @@ namespace ReunioSocial
         /// </summary>
         public void Cicle()
         {
+            Posicio posNova;
             
+            foreach(Persona p in persones.Gent.Values)
+            {
+                posNova = CalculaPosicioNova(p.Fila,p.Columna,p.OnVaig(this));
+                Moure(p.Fila, p.Columna, posNova.Fila, posNova.Columna);
+            }
 
         }
+
+        private Posicio CalculaPosicioNova(int fil, int col, Direccio direccio)
+        {
+            Posicio pos = null;
+
+            switch (direccio)
+            {
+                case Direccio.Amunt:
+                    pos.Fila = fil - 1;
+                    pos.Columna = col;
+                    break;
+                case Direccio.Avall:
+                    pos.Fila = fil + 1;
+                    pos.Columna=col;
+                    break;
+                case Direccio.Dreta:
+                    pos.Fila = fil;
+                    pos.Columna = col+1;
+                    break;
+                case Direccio.Esquerra:
+                    pos.Fila = fil;
+                    pos.Columna = col - 1;
+                    break;
+                default:
+                    pos.Fila = fil;
+                    pos.Columna = col;
+                    break;
+            }
+
+            return pos;
+        }
+
+
+
+        
 
         /// <summary>
         /// Conta les dones, homes i cambrers que hi son a la taula
@@ -224,6 +265,8 @@ namespace ReunioSocial
                 }
             }
         }
+
+        
 
     }
 }
