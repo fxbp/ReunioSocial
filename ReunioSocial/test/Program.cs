@@ -11,10 +11,9 @@ namespace test
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 10; i++)
-            {
+            public enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra}
 
-            }
+            Console.WriteLine(Direccio.Quiet);
             
         }
     }

@@ -9,7 +9,7 @@ namespace ReunioSocial
     public class Posicio
     {
         // protected per que tothom la vegi
-        protected enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra}
+        public enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra}
 
        
         protected int columna;

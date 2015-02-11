@@ -62,6 +62,7 @@ namespace ReunioSocial
 
 
         /// <summary>
+        /// [DEPRECATED]
         /// Atraccio de persona sobre una determinada posicio
         /// </summary>
         /// <param name="fil">Fila de la posició</param>
@@ -70,6 +71,9 @@ namespace ReunioSocial
         /// <returns>Atracció quantificada</returns>
         private double Atraccio(int fil, int col, Escenari esc)
         {
+            /**************************************
+             * DEPRECATED
+             */
             double resultat = 0;
             double distancia = 0;
             Posicio referencia = new Posicio(fil, col);
@@ -93,7 +97,7 @@ namespace ReunioSocial
         }
 
         /// <summary>
-        /// Mètode atracció sobre taula de persones.
+        /// Mètode atracció sobre taula de persones. Calcula l'atracció per cada persona decidint la que té més possibilitats d'acostar-se.
         /// </summary>
         /// <param name="fil"></param>
         /// <param name="col"></param>
@@ -125,29 +129,18 @@ namespace ReunioSocial
         /// <returns>Una de les 5 possibles direccions (Quiet, Amunt, Avall, Dreta, Esquerra</returns>
         protected Direccio OnVaig(Escenari esc)
         {
-            // HA DE VALORAR L'ATRACCIÓ AMB MÉS PES.
- 
-            double dreta = 0;
-            double esquerra = 0;
-            double amunt = 0;
-            double avall = 0;
-            double quiet = 0;
-
-            quiet=Atraccio(fila,columna,esc);
-            if (esc.DestiValid(fila + 1, columna)) avall = Atraccio(fila + 1, columna, esc);
-            if (esc.DestiValid(fila - 1, columna)) amunt = Atraccio(fila - 1, columna, esc);
-            if (esc.DestiValid(fila, columna - 1)) esquerra = Atraccio(fila, columna - 1, esc);
-            if (esc.DestiValid(fila, columna + 1)) dreta = Atraccio(fila, columna + 1, esc);
-
-
-            
-            Direccio triada = Direccio.Amunt;
-
-            return triada;
+            //Genero un graudirecció nou que m'ajudarà a calcular i a fer el codi del on vaig més senzill 
+            // Aquesta clase per defecte s'instancia amb els valors a 0.
+            GrauDireccio gd = new GrauDireccio(r);
+            // Assigno les posicions sempre que siguin assignables. 
+            gd.Assigna(Posicio.Direccio.Quiet,Atraccio(fila,columna,esc));
+            if (esc.DestiValid(fila + 1, columna)) gd.Assigna(Posicio.Direccio.Avall, Atraccio(fila + 1, columna, esc));
+            if (esc.DestiValid(fila - 1, columna)) gd.Assigna(Posicio.Direccio.Amunt, Atraccio(fila - 1, columna, esc));
+            if (esc.DestiValid(fila, columna - 1)) gd.Assigna(Posicio.Direccio.Esquerra, Atraccio(fila, columna - 1, esc));
+            if (esc.DestiValid(fila, columna + 1)) gd.Assigna(Posicio.Direccio.Dreta, Atraccio(fila, columna + 1, esc));
+            // Retorno la que té preferència. En cas d'empat ja sap calcular-se el random ella sola gràcies a que li he passat anteriorment.
+            return gd.DireccióResultat();
         }
-
-        
-
 
         /// <summary>
         /// Interès de la persona sobre una determinada posició
@@ -163,10 +156,134 @@ namespace ReunioSocial
         /// <returns>Retorna si és convidat</returns>
         public abstract bool EsConvidat();
 
-
-        
-
     }
+    /// <summary>
+    /// Classe interna de cada persona la qual sab desar i Retornar les direccions prioritàries. 
+    /// </summary>
+    class GrauDireccio
+    {
 
+        Dictionary<string, double> Graus;
+        Random r;
+
+        public GrauDireccio(Random r)
+        {
+            this.r = r;
+            Graus = new Dictionary<string, double>();
+            Graus.Add("Amunt", 0);
+            Graus.Add("Avall", 0);
+            Graus.Add("Esquerre", 0);
+            Graus.Add("Dreta", 0);
+            Graus.Add("Quiet", 0);
+        }
+
+        /// <summary>
+        /// Switch que ens permet definir la direcció.
+        /// </summary>
+        /// <param name="d"></param>
+        /// <param name="grau"></param>
+        public void Assigna(Posicio.Direccio d, double grau)
+        {
+            string dir = getDireccio(d);
+            Graus[dir] = grau;
+        }
+        /// <summary>
+        /// Retorna un nombre referent a la càrrega de la direcció.
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public double Extreu(Posicio.Direccio d)
+        {
+            string dir = getDireccio(d);
+            return Graus[dir];
+        }
+
+        /// <summary>
+        /// Evalua el valor més alt cap on ha d'anar la direcció. 
+        /// en cas que els valors siguin 
+        /// </summary>
+        /// <returns></returns>
+        public Posicio.Direccio DireccióResultat()
+        {
+
+            List<KeyValuePair<string, double>> valors = new List<KeyValuePair<string, double>>();
+            KeyValuePair<string,double>[] kvp = Graus.ToArray();
+            KeyValuePair<string, double> temp = kvp[0];
+            // Em quedo el valor més alt.
+            for (int i = 1; i < kvp.Length; i++)
+            {
+                if (temp.Value < kvp[i].Value) temp = kvp[i];
+            }
+            // Recullo repeticions. 
+            for (int i = 0; i < kvp.Length; i++)
+            {
+                if (temp.Value == kvp[i].Value) valors.Add(kvp[i]);
+            }
+            // Valorem si hi ha repetits i es llença un random en cas que n'hi hagi.
+            if (valors.Count > 1)
+            {
+                KeyValuePair<string, double> res = valors[r.Next(0, valors.Count)];
+                return getDireccioEnum(res.Key);
+            }
+            else return getDireccioEnum(temp.Key);
+        }
+
+        /// <summary>
+        /// Retorna el valor de la clau del diccionari referent a la direcció que reb.
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        private string getDireccio(Posicio.Direccio d){
+            string s = "";
+            switch (d)
+            {
+                case Posicio.Direccio.Amunt:
+                    s = "Amunt";
+                    break;
+                case Posicio.Direccio.Avall:
+                    s = "Avall";
+                    break;
+                case Posicio.Direccio.Dreta:
+                    s = "Esquerra";
+                    break;
+                case Posicio.Direccio.Esquerra:
+                    s = "Dreta";
+                    break;
+                case Posicio.Direccio.Quiet:
+                    s = "Quiet";
+                    break;
+            }
+            return s; 
+        }
+        /// <summary>
+        /// Se li passa un string i retorna l'enumeració.
+        /// </summary>
+        /// <param name="dir"></param>
+        /// <returns></returns>
+        private Posicio.Direccio getDireccioEnum(string dir)
+        {
+            Posicio.Direccio res = Posicio.Direccio.Amunt;
+            switch (dir)
+            {
+                case "Amunt":
+                    res = Posicio.Direccio.Amunt;
+                    break;
+                case "Avall":
+                    res = Posicio.Direccio.Avall;
+                    break;
+                case "Esquerra":
+                    res = Posicio.Direccio.Esquerra;
+                    break;
+                case "Dreta":
+                    res = Posicio.Direccio.Dreta;
+                    break;
+                case "Quiet":
+                    res = Posicio.Direccio.Quiet;
+                    break;
+            }
+            return res; 
+        }
+        
+    }
    
 }
