@@ -11,9 +11,9 @@ namespace ReunioSocial
 
         protected string nom;
         // Aleatori que s'utilitza per la direcció.
-        private Random r = new Random();
+        private static Random r=new Random();
 
-     /* Persona és una clase abstracta i no s'hauria de poder crear.
+    
      /// <summary>
      /// Crea una persona
      /// </summary>
@@ -41,7 +41,7 @@ namespace ReunioSocial
      /// </summary>
      public Persona(): base()
      { }
-     */
+ 
 
         /// <summary>
         /// Obté el nom de la persona

@@ -21,15 +21,16 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="files">Número de files de l'escenari</param>
         /// <param name="columnes">Número de columnes de l'escenari</param>
-        public Escenari(int f, int c, int numDones, int numHomes,int numCambrers)
+        public Escenari(int f, int c)
         {
             files = f;
             columnes = c;
-            this.nDones = numDones;
-            this.nHomes = numHomes;
-            this.nCambrers = numCambrers;
+            nDones = 0;
+            nHomes = 0;
+            nCambrers = 0;
             escenari=new Posicio[files,columnes];
             persones = new TaulaPersones();
+            EmplenarEscenari();
         }
 
 
@@ -180,11 +181,18 @@ namespace ReunioSocial
         /// Si la posició de la persona ja està ocupada, genera una excepció
         /// </summary>
         /// <param name="pers">Persona a afegir</param>
-        public void posar(Persona pers)
+        public void Posar(Persona pers)
         {
             if (escenari[pers.Fila, pers.Columna].Buida)
             {
                 escenari[pers.Fila, pers.Columna] = pers;
+                persones.Afegir(pers);
+                if (pers is Dona)
+                    nDones++;
+                else if (pers is Home)
+                    nHomes++;
+                else
+                    nCambrers++;
             }
             else
                 throw new Exception("La posicio ja està ocupada!!");
@@ -258,7 +266,18 @@ namespace ReunioSocial
         }
 
 
-
+        private void  EmplenarEscenari()
+        {
+            Posicio p;
+            for (int i = 0; i < files; i++)
+            {
+                for (int j = 0; j < columnes; j++)
+                {
+                    p=new Posicio(i,j);
+                    escenari[i, j] = p;
+                }
+            }
+        }
         
 
         /// <summary>
