@@ -9,7 +9,7 @@ namespace ReunioSocial
     public class Escenari
     {
         Posicio[,] escenari;
-        TaulaPersones persones = new TaulaPersones();
+        TaulaPersones persones;
         int files;
         int columnes;
         int nDones;
@@ -29,6 +29,7 @@ namespace ReunioSocial
             this.nHomes = numHomes;
             this.nCambrers = numCambrers;
             escenari=new Posicio[files,columnes];
+            persones = new TaulaPersones();
         }
 
 

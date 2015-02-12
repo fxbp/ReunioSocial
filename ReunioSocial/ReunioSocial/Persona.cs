@@ -133,11 +133,11 @@ namespace ReunioSocial
             // Aquesta clase per defecte s'instancia amb els valors a 0.
             GrauDireccio gd = new GrauDireccio(r);
             // Assigno les posicions sempre que siguin assignables. 
-            gd.Assigna(Posicio.Direccio.Quiet,Atraccio(fila,columna,esc));
-            if (esc.DestiValid(fila + 1, columna)) gd.Assigna(Posicio.Direccio.Avall, Atraccio(fila + 1, columna, esc));
-            if (esc.DestiValid(fila - 1, columna)) gd.Assigna(Posicio.Direccio.Amunt, Atraccio(fila - 1, columna, esc));
-            if (esc.DestiValid(fila, columna - 1)) gd.Assigna(Posicio.Direccio.Esquerra, Atraccio(fila, columna - 1, esc));
-            if (esc.DestiValid(fila, columna + 1)) gd.Assigna(Posicio.Direccio.Dreta, Atraccio(fila, columna + 1, esc));
+            gd.Assigna(Direccio.Quiet,Atraccio(fila,columna,esc));
+            if (esc.DestiValid(fila + 1, columna)) gd.Assigna(Direccio.Avall, Atraccio(fila + 1, columna, esc));
+            if (esc.DestiValid(fila - 1, columna)) gd.Assigna(Direccio.Amunt, Atraccio(fila - 1, columna, esc));
+            if (esc.DestiValid(fila, columna - 1)) gd.Assigna(Direccio.Esquerra, Atraccio(fila, columna - 1, esc));
+            if (esc.DestiValid(fila, columna + 1)) gd.Assigna(Direccio.Dreta, Atraccio(fila, columna + 1, esc));
             // Retorno la que té preferència. En cas d'empat ja sap calcular-se el random ella sola gràcies a que li he passat anteriorment.
             return gd.DireccióResultat();
         }
@@ -182,7 +182,7 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="d"></param>
         /// <param name="grau"></param>
-        public void Assigna(Posicio.Direccio d, double grau)
+        public void Assigna(Direccio d, double grau)
         {
             string dir = getDireccio(d);
             Graus[dir] = grau;
@@ -192,7 +192,7 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="d"></param>
         /// <returns></returns>
-        public double Extreu(Posicio.Direccio d)
+        public double Extreu(Direccio d)
         {
             string dir = getDireccio(d);
             return Graus[dir];
@@ -203,7 +203,7 @@ namespace ReunioSocial
         /// en cas que els valors siguin 
         /// </summary>
         /// <returns></returns>
-        public Posicio.Direccio DireccióResultat()
+        public Direccio DireccióResultat()
         {
 
             List<KeyValuePair<string, double>> valors = new List<KeyValuePair<string, double>>();
@@ -233,23 +233,23 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="d"></param>
         /// <returns></returns>
-        private string getDireccio(Posicio.Direccio d){
+        private string getDireccio(Direccio d){
             string s = "";
             switch (d)
             {
-                case Posicio.Direccio.Amunt:
+                case Direccio.Amunt:
                     s = "Amunt";
                     break;
-                case Posicio.Direccio.Avall:
+                case Direccio.Avall:
                     s = "Avall";
                     break;
-                case Posicio.Direccio.Dreta:
+                case Direccio.Dreta:
                     s = "Esquerra";
                     break;
-                case Posicio.Direccio.Esquerra:
+                case Direccio.Esquerra:
                     s = "Dreta";
                     break;
-                case Posicio.Direccio.Quiet:
+                case Direccio.Quiet:
                     s = "Quiet";
                     break;
             }
@@ -260,25 +260,25 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="dir"></param>
         /// <returns></returns>
-        private Posicio.Direccio getDireccioEnum(string dir)
+        private Direccio getDireccioEnum(string dir)
         {
-            Posicio.Direccio res = Posicio.Direccio.Amunt;
+            Direccio res = Direccio.Amunt;
             switch (dir)
             {
                 case "Amunt":
-                    res = Posicio.Direccio.Amunt;
+                    res = Direccio.Amunt;
                     break;
                 case "Avall":
-                    res = Posicio.Direccio.Avall;
+                    res = Direccio.Avall;
                     break;
                 case "Esquerra":
-                    res = Posicio.Direccio.Esquerra;
+                    res = Direccio.Esquerra;
                     break;
                 case "Dreta":
-                    res = Posicio.Direccio.Dreta;
+                    res = Direccio.Dreta;
                     break;
                 case "Quiet":
-                    res = Posicio.Direccio.Quiet;
+                    res = Direccio.Quiet;
                     break;
             }
             return res; 

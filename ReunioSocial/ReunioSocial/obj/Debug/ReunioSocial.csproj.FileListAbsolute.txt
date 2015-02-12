@@ -3,3 +3,8 @@ E:\2n\finalinterficies\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.pdb
 E:\2n\finalinterficies\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.dll
 E:\2n\finalinterficies\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.pdb
 E:\2n\finalinterficies\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csprojResolveAssemblyReference.cache
+C:\Users\Elizabeth\Documents\repositori\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.csprojResolveAssemblyReference.cache
+C:\Users\Elizabeth\Documents\repositori\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.dll
+C:\Users\Elizabeth\Documents\repositori\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.pdb
+C:\Users\Elizabeth\Documents\repositori\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.dll
+C:\Users\Elizabeth\Documents\repositori\ReunioSocial\ReunioSocial\obj\Debug\ReunioSocial.pdb

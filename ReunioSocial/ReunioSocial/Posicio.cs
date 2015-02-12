@@ -68,15 +68,16 @@ namespace ReunioSocial
         /// <param name="pos1">Primera posició</</param>
         /// <param name="pos2">Segona posició</param>
         /// <returns>Distància entre les dues posicions</returns>
-
+        public static double Distancia(Posicio pos1, Posicio pos2)
         {
+
             double distancia = 0;
-            double distBase=0;
-            double distAlt=0;
-            if (!(pos1.fila==pos2.fila&&pos1.columna==pos2.columna))
+            double distBase = 0;
+            double distAlt = 0;
+            if (!(pos1.fila == pos2.fila && pos1.columna == pos2.columna))
             {
-                distAlt=pos2.fila - pos1.fila;
-                distBase=pos2.columna - pos1.columna;
+                distAlt = pos2.fila - pos1.fila;
+                distBase = pos2.columna - pos1.columna;
                 distancia = Pitagoras(distAlt, distBase);
             }
 
