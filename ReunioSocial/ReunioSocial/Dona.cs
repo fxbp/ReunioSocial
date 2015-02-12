@@ -16,12 +16,15 @@ namespace ReunioSocial
         /// <param name="nom">String que identifica aquesta Dona</param>
         /// <param name="simpa">Taula de simpaties envers els altres convidats</param>
         /// <param name="sexe">Plus de simpatia envers convidats del sexe contrari</param>
-        public Dona(string nom, int[] simpa, int sexe)
-            : base(nom, simpa, sexe)
+        public Dona(string nom, int[] simpa, int sexe) //simpa, sexe)
         {
             this.nom = nom;
-            //Hem de reinicialitzar el diccionari de dones.
             this.plusSexe = sexe;
+            base.nom = nom;
+            KeyValuePair<string, int> dada = new KeyValuePair<string, int>();
+            // El 0 no està ben posat ja que s'hauria d'assignar la simpatia que li toca. 
+            base.plusSexe = sexe;
+            
         }
 
 
@@ -57,8 +60,6 @@ namespace ReunioSocial
                         }
                         if (Simpaties.Keys.Contains(((Persona)pos).Nom))
                             resultat += Simpaties[((Persona)pos).Nom];
-                            
-
                     }  
                
             }

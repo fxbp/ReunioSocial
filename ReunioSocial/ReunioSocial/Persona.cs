@@ -13,35 +13,35 @@ namespace ReunioSocial
         // Aleatori que s'utilitza per la direcció.
         private Random r = new Random();
 
+     /* Persona és una clase abstracta i no s'hauria de poder crear.
+     /// <summary>
+     /// Crea una persona
+     /// </summary>
+     /// <param name="nom">Strng que identifica la persona</param>
+     /// <param name="fil">Fila on està localitzada</param>
+     /// <param name="col">Columna on està localitzada</param>
+     public Persona(string nom, int fil, int col): base(fil, col)
+     {
+         this.nom = nom;
+     }
+        
 
-        /// <summary>
-        /// Crea una persona
-        /// </summary>
-        /// <param name="nom">Strng que identifica la persona</param>
-        /// <param name="fil">Fila on està localitzada</param>
-        /// <param name="col">Columna on està localitzada</param>
-        public Persona(string nom, int fil, int col): base(fil, col)
-        {
-            this.nom = nom;
-        }
+     /// <summary>
+     /// Crea una persona
+     /// </summary>
+     /// <param name="nom">nom de la persona</param>
+     public Persona(string nom)
+     {
+         this.nom = nom;
+     }
 
 
-        /// <summary>
-        /// Crea una persona
-        /// </summary>
-        /// <param name="nom">nom de la persona</param>
-        public Persona(string nom)
-        {
-            this.nom = nom;
-        }
-
-
-        /// <summary>
-        /// Crea una persona
-        /// </summary>
-        public Persona(): base()
-        { }
-
+     /// <summary>
+     /// Crea una persona
+     /// </summary>
+     public Persona(): base()
+     { }
+     */
 
         /// <summary>
         /// Obté el nom de la persona
