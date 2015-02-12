@@ -21,10 +21,13 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="files">Número de files de l'escenari</param>
         /// <param name="columnes">Número de columnes de l'escenari</param>
-        public Escenari(int f, int c)
+        public Escenari(int f, int c, int numDones, int numHomes,int numCambrers)
         {
             files = f;
             columnes = c;
+            this.nDones = numDones;
+            this.nHomes = numHomes;
+            this.nCambrers = numCambrers;
             escenari=new Posicio[files,columnes];
         }
 
@@ -46,6 +49,13 @@ namespace ReunioSocial
             get { return columnes; }
         }
 
+        /// <summary>
+        /// Retorna la taula persones
+        /// </summary>
+        public TaulaPersones TaulaPersones
+        {
+            get { return persones; }
+        }
 
         /// <summary>
         /// Retorna el número de homes que hi ha dins de l'escenari
@@ -86,9 +96,16 @@ namespace ReunioSocial
         /// <param name="colDesti">Columna de la coordenada de destí</param>
         private void Moure(int filOrig, int colOrig, int filDesti, int colDesti)
         {
-            Posicio aux = escenari[filDesti, colDesti];
+            Posicio aux = this[filDesti, colDesti];
             escenari[filDesti, colDesti] = escenari[filOrig, colOrig];
             escenari[filOrig, colOrig] = aux;
+
+            escenari[filDesti, colDesti].Fila=filDesti;
+            escenari[filDesti, colDesti].Columna = colDesti;
+
+            escenari[filOrig, colOrig].Fila = filOrig;
+            escenari[filDesti, colDesti].Columna = colOrig;
+
         }
 
         /// <summary>
@@ -210,7 +227,7 @@ namespace ReunioSocial
 
         private Posicio CalculaPosicioNova(int fil, int col, Direccio direccio)
         {
-            Posicio pos = null;//si es null no podem asignarli valor
+            Posicio pos = new Posicio();
 
             switch (direccio)
             {
@@ -246,25 +263,25 @@ namespace ReunioSocial
         /// <summary>
         /// Conta les dones, homes i cambrers que hi son a la taula
         /// </summary>
-        private void ContarPersones()
-        {
-            nDones = 0;
-            nHomes = 0;
-            nCambrers = 0;
-            for(int i=0;i<files;i++)
-            {
-                for(int j=0; j<columnes;j++)
-                {
-                    if (escenari[i, j] is Dona)
-                        nDones++;
-                    else if (escenari[i, j] is Home)
-                        nHomes++;
-                    else if (escenari[i, j] is Cambrer)
-                        nCambrers++;
+        //private void ContarPersones()
+        //{
+        //    nDones = 0;
+        //    nHomes = 0;
+        //    nCambrers = 0;
+        //    for(int i=0;i<files;i++)
+        //    {
+        //        for(int j=0; j<columnes;j++)
+        //        {
+        //            if (escenari[i, j] is Dona)
+        //                nDones++;
+        //            else if (escenari[i, j] is Home)
+        //                nHomes++;
+        //            else if (escenari[i, j] is Cambrer)
+        //                nCambrers++;
   
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
         
 
