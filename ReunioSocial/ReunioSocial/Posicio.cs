@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ReunioSocial
 {
+    public enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra }
     public class Posicio
     {
         // protected per que tothom la vegi
-        public enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra}
+        
 
        
         protected int columna;

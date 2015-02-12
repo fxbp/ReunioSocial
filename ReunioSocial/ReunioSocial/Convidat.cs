@@ -19,10 +19,12 @@ namespace ReunioSocial
         public Convidat(string nom, int[] simp, int sexe)
         {
             simpaties = new Dictionary<string, int>();
+            plusSexe = sexe;
             
         }
 
-
+        //Cada persona que es creii nova harua d'afegirse a la taula de persones i llavors un cop tinguem totes les persones crear un metoder afegirSimpaties i 
+        //passar-li la taula persona i una llista d¡interesos. si no per a cada convidat que creem l'hi hauriem de afegir les noves simpaties per a cada convidat nou.
 
 
 
