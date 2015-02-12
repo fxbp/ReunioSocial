@@ -26,8 +26,15 @@ namespace ReunioSocial
         //Cada persona que es creii nova harua d'afegirse a la taula de persones i llavors un cop tinguem totes les persones crear un metoder afegirSimpaties i 
         //passar-li la taula persona i una llista d¡interesos. si no per a cada convidat que creem l'hi hauriem de afegir les noves simpaties per a cada convidat nou.
 
-
-
+        //parlem si es canvia en comptes de llista
+        public void AfegirSimpaties(List<KeyValuePair<string,int>> llistaSimpaties)
+        {
+            foreach (KeyValuePair<string,int> kvp in llistaSimpaties)
+            {
+                if(!simpaties.Keys.Contains(kvp.Key))//&&kvp.Key!=this.nom)
+                    simpaties.Add(kvp.Key, kvp.Value);
+            }
+        }
 
         public Convidat(){}
 
@@ -43,6 +50,10 @@ namespace ReunioSocial
         }
 
 
+        public Dictionary<string,int> Simpaties
+        {
+            get { return simpaties; }
+        }
         /// <summary>
         /// Retorna o estableix la simpaties envers a algú
         /// </summary>
@@ -57,8 +68,8 @@ namespace ReunioSocial
         /// </summary>
         public int PlusSexe
         {
-            get { return 0; }
-            set { }
+            get { return plusSexe; }
+            set { plusSexe = value; }
         }
 
         /// <summary>

@@ -45,20 +45,19 @@ namespace ReunioSocial
         public override int Interes(Posicio pos)
         {
             int resultat = 0;
-            Persona p;
+            
             if (!pos.Buida)
             {
                 
                     if(((Persona)pos).EsConvidat())
                     {
-                        if(pos is Dona)
-                        {
-                            resultat=0;
-                        }
-                        else
+                        if(pos is Home)
                         {
                             resultat+=plusSexe;
                         }
+                        if (Simpaties.Keys.Contains(((Persona)pos).Nom))
+                            resultat += Simpaties[((Persona)pos).Nom];
+                            
 
                     }  
                
