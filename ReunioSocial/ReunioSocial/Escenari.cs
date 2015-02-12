@@ -210,7 +210,7 @@ namespace ReunioSocial
 
         private Posicio CalculaPosicioNova(int fil, int col, Direccio direccio)
         {
-            Posicio pos = null;
+            Posicio pos = null;//si es null no podem asignarli valor
 
             switch (direccio)
             {

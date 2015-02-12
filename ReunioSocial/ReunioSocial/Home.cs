@@ -51,15 +51,15 @@ namespace ReunioSocial
                     if (p is Dona)
                     {
                         resultat += ((Dona)p).PlusSexe;
-                        //Cal afegir la simpatia, s'ha d'accedir a la propietat retornasimpatia.
+
                     }
-                    else
-                    {
-                        resultat = 0;
-                    }
+
+                    if (Simpaties.Keys.Contains(p.Nom))
+                        resultat += Simpaties[p.Nom];
+                   
                 }
                 else
-                    resultat = 1;
+                    resultat+= 1;
             }
             return resultat;
         }

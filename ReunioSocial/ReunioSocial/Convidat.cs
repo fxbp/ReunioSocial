@@ -8,25 +8,6 @@ namespace ReunioSocial
 {
     public abstract class Convidat : Persona
     {
-        
-
-
-        /** En teoria és una clase abstracta i no s'haurien de poder crear.
-        /// <summary>
-        /// Crea un convidat
-        /// </summary>
-        /// <param name="nom">string que l'identificarà</param>
-        /// <param name="simp">Taula de simpaties</param>
-        /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
-        public Convidat(string nom, int[] simp, int sexe)
-        {
-            simpaties = new Dictionary<string, int>();
-            
-        }
-        public Convidat(){}
-         * 
-         */
-
 
         /****
          * Atributs
@@ -44,6 +25,19 @@ namespace ReunioSocial
             get { return simpaties; }
             set { simpaties = value; }
         }
+
+        //parlem si es canvia en comptes de llista
+        public void AfegirSimpaties(List<KeyValuePair<string,int>> llistaSimpaties)
+        {
+            foreach (KeyValuePair<string,int> kvp in llistaSimpaties)
+            {
+                if(!simpaties.Keys.Contains(kvp.Key))//&&kvp.Key!=this.nom)
+                    simpaties.Add(kvp.Key, kvp.Value);
+            }
+        }
+
+        public Convidat(){}
+
         /// <summary>
         /// Crea un convidat
         /// </summary>
@@ -54,6 +48,7 @@ namespace ReunioSocial
             this.nom = nom;
             this.plusSexe = sexe; 
         }
+
 
         /// <summary>
         /// Retorna o estableix la simpaties envers a algú
@@ -69,8 +64,8 @@ namespace ReunioSocial
         /// </summary>
         public int PlusSexe
         {
-            get { return 0; }
-            set { }
+            get { return plusSexe; }
+            set { plusSexe = value; }
         }
 
         /// <summary>
