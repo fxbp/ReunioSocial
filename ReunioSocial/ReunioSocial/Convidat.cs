@@ -8,8 +8,10 @@ namespace ReunioSocial
 {
     public abstract class Convidat : Persona
     {
-        protected Dictionary<string, int> simpaties;
-        protected int plusSexe;
+        
+
+
+        /** En teoria és una clase abstracta i no s'haurien de poder crear.
         /// <summary>
         /// Crea un convidat
         /// </summary>
@@ -21,14 +23,27 @@ namespace ReunioSocial
             simpaties = new Dictionary<string, int>();
             
         }
-
-
-
-
-
-
         public Convidat(){}
+         * 
+         */
 
+
+        /****
+         * Atributs
+         */
+        private Dictionary<string, int> simpaties = new Dictionary<string,int>();
+        protected int plusSexe;
+
+
+
+        /*******
+         * Propietats
+         */ 
+        protected Dictionary<string, int> Simpaties
+        {
+            get { return simpaties; }
+            set { simpaties = value; }
+        }
         /// <summary>
         /// Crea un convidat
         /// </summary>
@@ -39,7 +54,6 @@ namespace ReunioSocial
             this.nom = nom;
             this.plusSexe = sexe; 
         }
-
 
         /// <summary>
         /// Retorna o estableix la simpaties envers a algú

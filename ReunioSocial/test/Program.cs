@@ -11,9 +11,7 @@ namespace test
     {
         static void Main(string[] args)
         {
-            public enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra}
-
-            Console.WriteLine(Direccio.Quiet);
+            
             
         }
     }

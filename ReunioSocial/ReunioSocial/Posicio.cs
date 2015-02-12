@@ -67,7 +67,7 @@ namespace ReunioSocial
         /// <param name="pos1">Primera posició</</param>
         /// <param name="pos2">Segona posició</param>
         /// <returns>Distància entre les dues posicions</returns>
-        public static double Distancia (Posicio pos1, Posicio pos2)
+
         {
             double distancia = 0;
             double distBase=0;
