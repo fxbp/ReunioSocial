@@ -280,30 +280,5 @@ namespace ReunioSocial
         }
         
 
-        /// <summary>
-        /// Conta les dones, homes i cambrers que hi son a la taula
-        /// </summary>
-        //private void ContarPersones()
-        //{
-        //    nDones = 0;
-        //    nHomes = 0;
-        //    nCambrers = 0;
-        //    for(int i=0;i<files;i++)
-        //    {
-        //        for(int j=0; j<columnes;j++)
-        //        {
-        //            if (escenari[i, j] is Dona)
-        //                nDones++;
-        //            else if (escenari[i, j] is Home)
-        //                nHomes++;
-        //            else if (escenari[i, j] is Cambrer)
-        //                nCambrers++;
-  
-        //        }
-        //    }
-        //}
-
-        
-
     }
 }
