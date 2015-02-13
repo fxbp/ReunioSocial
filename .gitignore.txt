@@ -1,3 +1,0 @@
-ReunioSocial/ReunioSocial.v12.suo
-ReunioSocial/ReunioSocial/bin
-ReunioSocial/ReunioSocial/obj
