@@ -15,7 +15,18 @@ namespace ReunioSocial
         private Dictionary<string, int> simpaties = new Dictionary<string,int>();
         protected int plusSexe;
 
+        public Convidat() { }
 
+        /// <summary>
+        /// Crea un convidat
+        /// </summary>
+        /// <param name="nom">Caràcter que l'identificarà</param>
+        /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
+        public Convidat(string nom, int sexe, int fil, int col)
+            : base(nom, fil, col)
+        {
+            this.plusSexe = sexe;
+        }
 
         /*******
          * Propietats
@@ -26,27 +37,17 @@ namespace ReunioSocial
             set { simpaties = value; }
         }
 
-        //parlem si es canvia en comptes de llista
-        public void AfegirSimpaties(List<KeyValuePair<string,int>> llistaSimpaties)
-        {
-            foreach (KeyValuePair<string,int> kvp in llistaSimpaties)
-            {
-                if(!simpaties.Keys.Contains(kvp.Key))//&&kvp.Key!=this.nom)
-                    simpaties.Add(kvp.Key, kvp.Value);
-            }
-        }
-
-        public Convidat(){}
-
         /// <summary>
-        /// Crea un convidat
+        /// Afegeix un nivell de simpatia al diccionari de la persona segons el nom que li pasem
         /// </summary>
-        /// <param name="nom">Caràcter que l'identificarà</param>
-        /// <param name="sex">Plus de simpatia sobre el sexe contrari</param>
-        public Convidat(string nom, int sexe)
+        /// <param name="nom">nom de la persona que afegim al diccionari</param>
+        /// <param name="simpatia">nivell simpatia de -5 a 5</param>
+        public void AfegirSimpatia(string nom, int simpatia)
         {
-            this.nom = nom;
-            this.plusSexe = sexe; 
+            
+                if(!simpaties.Keys.Contains(nom))
+                    simpaties.Add(nom, simpatia);
+            
         }
 
 

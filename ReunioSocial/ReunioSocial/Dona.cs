@@ -15,7 +15,7 @@ namespace ReunioSocial
         /// </summary>
         /// <param name="nom"> String que identifica aquesta Dona</param>
         /// <param name="sexe">Plus de simpatia envers convidats del sexe contrari</param>
-        public Dona(string nom, int sexe) :base(nom,sexe)
+        public Dona(string nom, int sexe,int fil, int col) :base(nom,sexe, fil, col)
         {
            
         }

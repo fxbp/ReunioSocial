@@ -162,7 +162,6 @@ namespace ReunioSocial
     /// </summary>
     class GrauDireccio
     {
-
         Dictionary<string, double> Graus;
         Random r;
 

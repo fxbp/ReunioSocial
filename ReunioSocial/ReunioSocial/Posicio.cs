@@ -8,11 +8,7 @@ namespace ReunioSocial
 {
     public enum Direccio { Quiet, Amunt, Dreta, Avall, Esquerra }
     public class Posicio
-    {
-        // protected per que tothom la vegi
-        
-
-       
+    {    
         protected int columna;
         protected int fila;
         /// <summary> 

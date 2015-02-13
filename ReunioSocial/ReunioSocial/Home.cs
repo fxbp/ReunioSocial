@@ -8,29 +8,15 @@ namespace ReunioSocial
 {
     public class Home : Convidat
     {
-        /// <summary>
-        /// Crea un Home
-        /// </summary>
-        /// <param name="nom">String que l'identificarà</param>
-        /// <param name="simpa">Taula de simpaties</param>
-        /// <param name="sexe">Plus de simpatia envers del sexe contrari</param>
-        public Home(string nom, int[] simpa, int sexe)
-        {
-            this.nom = nom;
-            //Hem de reinicialitzar el diccionari de persones.
-            this.plusSexe = sexe;
-        }
-
-
+       
         /// <summary>
         /// Crea un Home
         /// </summary
         /// <param name="nom">String que l'identificarà</param>
         /// <param name="sexe">Plus de simpatia envers del sexe contrari</param>
-        public Home(string nom, int sexe)
+        public Home(string nom, int sexe, int fil, int col):base(nom,sexe,fil,col)
         {
-            this.nom = nom;
-            this.plusSexe = sexe;
+
         }
 
 
