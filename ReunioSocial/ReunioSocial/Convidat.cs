@@ -15,7 +15,9 @@ namespace ReunioSocial
         private Dictionary<string, int> simpaties = new Dictionary<string,int>();
         protected int plusSexe;
 
-        public Convidat() { }
+        public Convidat() :base()
+        { 
+        }
 
         /// <summary>
         /// Crea un convidat

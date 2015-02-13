@@ -40,7 +40,8 @@ namespace ReunioSocial
      /// Crea una persona
      /// </summary>
      public Persona(): base()
-     { }
+     { 
+     }
  
 
         /// <summary>

@@ -20,6 +20,10 @@ namespace ReunioSocial
            
         }
 
+        public Dona():base()
+        {
+
+        }
 
         /// <summary>
         /// Interès d'aquest home per una posició
