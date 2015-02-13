@@ -157,7 +157,22 @@ namespace ReunioSocial
         /// <returns>Retorna si és convidat</returns>
         public abstract bool EsConvidat();
 
+        /// <summary>
+        /// Format llegible de la persona.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.nom;
+        }
+
     }
+
+
+ 
+
+
+
     /// <summary>
     /// Classe interna de cada persona la qual sab desar i Retornar les direccions prioritàries. 
     /// </summary>

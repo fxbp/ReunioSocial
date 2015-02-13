@@ -46,20 +46,31 @@ namespace ReunioSocial
         /// <param name="simpatia">nivell simpatia de -5 a 5</param>
         public void AfegirSimpatia(string nom, int simpatia)
         {
-            
                 if(!simpaties.Keys.Contains(nom))
                     simpaties.Add(nom, simpatia);
-            
         }
 
+        /// <summary>
+        /// Retorna una llista de tuples clau valor per poder utiliutzr amb la graella.
+        /// </summary>
+        /// <returns></returns>
+        public List<KeyValuePair<string,int>> ExtreuSimpaties()
+        {
+            List<KeyValuePair<string,int>> llista = new List<KeyValuePair<string,int>>(); 
+            foreach (KeyValuePair<string,int> pers in Simpaties)
+            {
+                llista.Add(pers);
+            }
+            return llista;
+        }
 
         /// <summary>
         /// Retorna o estableix la simpaties envers a algú
         /// </summary>
         public int this[string nom]
         {
-            get { return 0; }
-            set { this.nom = nom; }
+            get { return Simpaties[nom]; }
+            set { Simpaties[nom] = value; }
         }
 
         /// <summary>

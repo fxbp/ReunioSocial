@@ -127,7 +127,7 @@ namespace ReunioSocial
         /// <returns>retorna si la coordenada és vàlida i està buida</returns>
         public bool DestiValid(int fil, int col)
         {
-            return (fil <= Files && col <= Columnes) && escenari[fil, col].Buida;       
+            return (fil >= 0 && fil < Files && col >= 0 && col < Columnes) && escenari[fil, col].Buida;       
         }
 
 
@@ -265,7 +265,9 @@ namespace ReunioSocial
             return pos;
         }
 
-
+        /// <summary>
+        /// Funció que ens emplena l'escenari de posicions buides, 
+        /// </summary>
         private void  EmplenarEscenari()
         {
             Posicio p;
@@ -278,7 +280,35 @@ namespace ReunioSocial
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Mètode Tostring
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string s = "";
+            for (int i = 0; i < files; i++)
+            {
+                for (int j = 0; j < columnes; j++)
+                {
+                    if (escenari[i, j] is Persona)
+                    {
+                        Persona p = (Persona)(escenari[i, j]);
+                        s += p.ToString().PadLeft(10, ' ');
+                    }
+                    else
+                    {
+                        string cadena = "0";
+                        s +=  cadena.PadLeft(10, ' ');
+                    }
+                }
+                s += "\n";
+            }
+            return s;
+
+        }
+
 
     }
 }
