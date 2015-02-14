@@ -36,19 +36,14 @@ namespace GraellaSimpaties
             Random r = new Random();
 
             Escenari esc=CrearEscenari(r);
-            int homes, dones;
+           
 
-            homes = esc.Homes;
-            dones = esc.Dones;
-
-            int totalConviats = homes + dones;
-
-            CrearGraella(totalConviats,esc);
-            MostrarSimpaties(esc);
+            CrearGraella(esc);
+            MostrarSimpaties();
             
         }
 
-        private void MostrarSimpaties(Escenari e)
+        private void MostrarSimpaties()
         {
 
             int fila, columna;
@@ -58,25 +53,36 @@ namespace GraellaSimpaties
             List<KeyValuePair<string, int>> simpaties;
             foreach(UIElement ui in grdSimpaties.Children)
             {
+                //per a cada element del grid receptor mira si conte una label
                 if(ui is Label)
                 {
                     lbl = ui as Label;
+                    //si es una label mira si el tag conte un convidat
+                    //Nomes s'han afegit els convidats al tag de les files, les columnes no tenen res al tag
                     if (lbl.Tag!=null&&lbl.Tag is Convidat)
                     {
+                        //extreu la simpatia del convidat
                         simpaties = ((Convidat)lbl.Tag).ExtreuSimpaties();
+                        //obte la fila del convidat actual al diccionari de files
                         fila = files[((Convidat)lbl.Tag).Nom];
                         foreach(KeyValuePair<string, int> kvp in simpaties)
                         {
+                            //per a cada elmeent dins les simpeties obte la columna on anira el convidat
+                            //no es conte a si mateix
                             columna = columnes[kvp.Key];
                             actual = new Label();
                             actual.Content = kvp.Value;
                             provisional.Children.Add(actual);
                             actual.SetValue(Grid.RowProperty, fila);
                             actual.SetValue(Grid.ColumnProperty, columna);
+                            //cada element es posa dins un grid prosivional. 
+                            //si es fiques directament al grid desti el foreach acabaria ja que cada cop canvia el nombre de fills que te
                         }
                     }
                 }
             }
+
+            //es fa el traspas del grid provisional al grid de desti.
             foreach(UIElement ui in provisional.Children)
             {
                 
@@ -91,7 +97,7 @@ namespace GraellaSimpaties
         
         }
 
-        private  void CrearGraella(int total,Escenari e)
+        private  void CrearGraella(Escenari e)
         {
             int actual = 1;
             Label lblPersonaActual;
@@ -99,9 +105,12 @@ namespace GraellaSimpaties
             {
                 if (p is Convidat)
                 {
+                    //afageix una fila i una columna mes
                     grdSimpaties.RowDefinitions.Add(new RowDefinition());
                     grdSimpaties.ColumnDefinitions.Add(new ColumnDefinition());
                     //per la fila
+                    //crea un nou label amb el nom de la persona i la posa al tag
+                    //posa la label dins la graella, la fila sempre sera 0 la columna anira canviant
                     lblPersonaActual = new Label();
                     lblPersonaActual.Content = p.Nom;
                     lblPersonaActual.Name = "lbl" + p.Nom + "fila";
@@ -109,20 +118,27 @@ namespace GraellaSimpaties
                     grdSimpaties.Children.Add(lblPersonaActual);
                     lblPersonaActual.SetValue(Grid.RowProperty, 0);
                     lblPersonaActual.SetValue(Grid.ColumnProperty, actual);
+                    //diccionari de files que conte el nom de la persona i la fila que li toca
                     files.Add(p.Nom, actual);
                     //per la columna
+                    //crea igualment una nova label amb el nom de la persona
+                    //posa la label dins la graella, la columna sempre sera 0 i la fila anira canviant
                     lblPersonaActual = new Label();
                     lblPersonaActual.Content = p.Nom;
                     grdSimpaties.Children.Add(lblPersonaActual);
                     lblPersonaActual.Name = "lbl" + p.Nom + "columna";
                     lblPersonaActual.SetValue(Grid.RowProperty, actual);
                     lblPersonaActual.SetValue(Grid.ColumnProperty, 0);
+                    //diccionari de columnes que conte el nom de la persona i la columna que li toca
                     columnes.Add(p.Nom, actual);
                     actual++;
                 }
             }
         }
 
+
+
+        //a partir daqui nomes serveix per crear l'escenari. en l'aplicacíó ja estara fet no caldra tornar-ho a fer aqui.
         private Escenari CrearEscenari(Random r)
         {
             Escenari esc = new Escenari(50, 50);
