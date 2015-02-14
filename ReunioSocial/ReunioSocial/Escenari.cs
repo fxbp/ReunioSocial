@@ -98,15 +98,19 @@ namespace ReunioSocial
         /// <param name="colDesti">Columna de la coordenada de destí</param>
         private void Moure(int filOrig, int colOrig, int filDesti, int colDesti)
         {
+            
             Posicio aux = this[filDesti, colDesti];
-            escenari[filDesti, colDesti] = escenari[filOrig, colOrig];
-            escenari[filOrig, colOrig] = aux;
+            if (DestiValid(filDesti, colDesti))
+            {
+                escenari[filDesti, colDesti] = escenari[filOrig, colOrig];
+                escenari[filOrig, colOrig] = aux;
 
-            escenari[filDesti, colDesti].Fila=filDesti;
-            escenari[filDesti, colDesti].Columna = colDesti;
+                escenari[filDesti, colDesti].Fila = filOrig;
+                escenari[filDesti, colDesti].Columna = colOrig;
 
-            escenari[filOrig, colOrig].Fila = filOrig;
-            escenari[filDesti, colDesti].Columna = colOrig;
+                escenari[filOrig, colOrig].Fila = filDesti;
+                escenari[filOrig, colOrig].Columna = colDesti;
+            }
 
         }
 

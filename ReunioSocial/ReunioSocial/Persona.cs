@@ -70,11 +70,11 @@ namespace ReunioSocial
         /// <param name="col">Columan de la posició</param>
         /// <param name="esc">Escenari on estan situats</param>
         /// <returns>Atracció quantificada</returns>
-        private double Atraccio(int fil, int col, Escenari esc)
+       private double Atraccio(int fil, int col, Escenari esc)
         {
             /**************************************
              * DEPRECATED
-             */
+            */
             double resultat = 0;
             double distancia = 0;
             Posicio referencia = new Posicio(fil, col);
@@ -104,7 +104,7 @@ namespace ReunioSocial
         /// <param name="col"></param>
         /// <param name="tp"></param>
         /// <returns></returns>
-        private double Atracció(int fil, int col, TaulaPersones tp)
+        private double Atraccio(int fil, int col, TaulaPersones tp)
         {
             double resultat = 0;
             double distancia = 0;
@@ -134,11 +134,11 @@ namespace ReunioSocial
             // Aquesta clase per defecte s'instancia amb els valors a 0.
             GrauDireccio gd = new GrauDireccio(r);
             // Assigno les posicions sempre que siguin assignables. 
-            gd.Assigna(Direccio.Quiet,Atraccio(fila,columna,esc));
-            if (esc.DestiValid(fila + 1, columna)) gd.Assigna(Direccio.Avall, Atraccio(fila + 1, columna, esc));
-            if (esc.DestiValid(fila - 1, columna)) gd.Assigna(Direccio.Amunt, Atraccio(fila - 1, columna, esc));
-            if (esc.DestiValid(fila, columna - 1)) gd.Assigna(Direccio.Esquerra, Atraccio(fila, columna - 1, esc));
-            if (esc.DestiValid(fila, columna + 1)) gd.Assigna(Direccio.Dreta, Atraccio(fila, columna + 1, esc));
+            gd.Assigna(Direccio.Quiet,Atraccio(fila,columna,esc.TaulaPersones));
+            if (esc.DestiValid(fila + 1, columna)) gd.Assigna(Direccio.Avall, Atraccio(fila + 1, columna, esc.TaulaPersones));
+            if (esc.DestiValid(fila - 1, columna)) gd.Assigna(Direccio.Amunt, Atraccio(fila - 1, columna, esc.TaulaPersones));
+            if (esc.DestiValid(fila, columna - 1)) gd.Assigna(Direccio.Esquerra, Atraccio(fila, columna - 1, esc.TaulaPersones));
+            if (esc.DestiValid(fila, columna + 1)) gd.Assigna(Direccio.Dreta, Atraccio(fila, columna + 1, esc.TaulaPersones));
             // Retorno la que té preferència. En cas d'empat ja sap calcular-se el random ella sola gràcies a que li he passat anteriorment.
             return gd.DireccióResultat();
         }
@@ -259,10 +259,10 @@ namespace ReunioSocial
                     s = "Avall";
                     break;
                 case Direccio.Dreta:
-                    s = "Esquerra";
+                    s = "Dreta";
                     break;
                 case Direccio.Esquerra:
-                    s = "Dreta";
+                    s = "Esquerra";
                     break;
                 case Direccio.Quiet:
                     s = "Quiet";

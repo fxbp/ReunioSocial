@@ -72,8 +72,8 @@ namespace ReunioSocial
             double distAlt = 0;
             if (!(pos1.fila == pos2.fila && pos1.columna == pos2.columna))
             {
-                distAlt = pos2.fila - pos1.fila;
-                distBase = pos2.columna - pos1.columna;
+                distAlt = Math.Abs(pos2.fila - pos1.fila);
+                distBase = Math.Abs(pos2.columna - pos1.columna);
                 distancia = Pitagoras(distAlt, distBase);
             }
 
