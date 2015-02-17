@@ -19,6 +19,11 @@ namespace ReunioSocial
         { 
         }
 
+
+        public abstract bool EsHome();
+        
+
+
         /// <summary>
         /// Crea un convidat
         /// </summary>
@@ -88,7 +93,7 @@ namespace ReunioSocial
         /// <returns>Cert</returns>
         public override bool EsConvidat()
         {
-            return true;
+            return true; 
         }
     }
 }

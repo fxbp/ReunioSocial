@@ -12,10 +12,11 @@ namespace ReunioSocial
         TaulaPersones persones;
         int files;
         int columnes;
+        
         int nDones;
         int nHomes;
         int nCambrers;
-
+        
         /// <summary>
         /// Crea un escenari donades unes mides
         /// </summary>
@@ -25,14 +26,25 @@ namespace ReunioSocial
         {
             files = f;
             columnes = c;
+            escenari=new Posicio[files,columnes];
+            EmplenarEscenari();
+            persones = new TaulaPersones(this);
             nDones = 0;
             nHomes = 0;
             nCambrers = 0;
-            escenari=new Posicio[files,columnes];
-            persones = new TaulaPersones();
-            EmplenarEscenari();
+             
+
         }
 
+
+        /// <summary>
+        /// Retorna una matriu de posicions.
+        /// </summary>
+        public Posicio[,] EscenariToMatriusPosicions
+        {
+            get { return escenari; }
+        }
+        
 
         /// <summary>
         /// Retorna el número de files de l'escenari
@@ -58,6 +70,7 @@ namespace ReunioSocial
         {
             get { return persones; }
         }
+
 
         /// <summary>
         /// Retorna el número de homes que hi ha dins de l'escenari
@@ -143,7 +156,6 @@ namespace ReunioSocial
         public String[,] ContingutNoms()
         {
             string[,] contingut = new string[files, columnes];
-
             for (int i = 0; i < files; i++)
             {
                 for (int j = 0; j < columnes; j++)
@@ -159,7 +171,6 @@ namespace ReunioSocial
                     }
                 }
             }
-
             return contingut;
         }
 
@@ -187,19 +198,19 @@ namespace ReunioSocial
         /// <param name="pers">Persona a afegir</param>
         public void Posar(Persona pers)
         {
-            if (escenari[pers.Fila, pers.Columna].Buida)
+            if (!escenari[pers.Fila, pers.Columna].Buida) throw new Exception("La posicio ja està ocupada!!");
+            
+            escenari[pers.Fila, pers.Columna] = pers;
+            persones.Afegir(pers);
+            if (pers.EsConvidat())
             {
-                escenari[pers.Fila, pers.Columna] = pers;
-                persones.Afegir(pers);
-                if (pers is Dona)
+                if (!((Convidat)pers).EsHome())
                     nDones++;
-                else if (pers is Home)
-                    nHomes++;
                 else
-                    nCambrers++;
+                    nHomes++;
             }
             else
-                throw new Exception("La posicio ja està ocupada!!");
+                nCambrers++;
         }
 
 
@@ -210,17 +221,7 @@ namespace ReunioSocial
         /// <returns>Si hi ha coincidència</returns>
         public bool NomRepetit(string nom)
         {
-            bool repetit = false;
-            string[,] noms = ContingutNoms();
-            for (int i = 0; i < files; i++)
-            {
-                for (int j = 0; j < columnes; j++)
-                {
-                    string n = noms[i, j];
-                    repetit = n == nom;                  
-                }
-            }
-            return repetit;
+            return TaulaPersones[nom] != null;
         }
 
         /// <summary>
@@ -274,13 +275,11 @@ namespace ReunioSocial
         /// </summary>
         private void  EmplenarEscenari()
         {
-            Posicio p;
             for (int i = 0; i < files; i++)
             {
                 for (int j = 0; j < columnes; j++)
                 {
-                    p=new Posicio(i,j);
-                    escenari[i, j] = p;
+                    escenari[i, j] = new Posicio(i,j);
                 }
             }
         }
@@ -296,7 +295,7 @@ namespace ReunioSocial
             {
                 for (int j = 0; j < columnes; j++)
                 {
-                    if (escenari[i, j] is Persona)
+                    if (!escenari[i, j].Buida)
                     {
                         Persona p = (Persona)(escenari[i, j]);
                         s += p.ToString().PadLeft(10, ' ');

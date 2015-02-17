@@ -50,6 +50,7 @@ namespace ReunioSocial
         public string Nom
         {
             get { return nom; }
+            set { nom = value; }
         }
 
 
@@ -63,7 +64,6 @@ namespace ReunioSocial
 
 
         /// <summary>
-        /// [DEPRECATED]
         /// Atraccio de persona sobre una determinada posicio
         /// </summary>
         /// <param name="fil">Fila de la posició</param>
@@ -72,32 +72,31 @@ namespace ReunioSocial
         /// <returns>Atracció quantificada</returns>
        private double Atraccio(int fil, int col, Escenari esc)
         {
-            /**************************************
-             * DEPRECATED
-            */
-            double resultat = 0;
-            double distancia = 0;
-            Posicio referencia = new Posicio(fil, col);
-            Posicio actual;
-            int interes;
-            for (int i = 0; i < esc.Files; i++)
-            {
-                for(int j=0;j<esc.Columnes;j++)
-                {
-                    actual = esc[i, j];
-                    if (!actual.Buida&&actual!=this)
-                    {
-                        distancia = Posicio.Distancia(referencia, actual);
-                        interes = Interes(actual);
-                        resultat += interes / distancia;
-                    }
-                }
-            }
+            return Atraccio(fil, col, esc.TaulaPersones);
+            //double resultat = 0;
+            //double distancia = 0;
+            //Posicio referencia = new Posicio(fil, col);
+            //Posicio actual;
+            //int interes;
+            //for (int i = 0; i < esc.Files; i++)
+            //{
+            //    for(int j=0;j<esc.Columnes;j++)
+            //    {
+            //        actual = esc[i, j];
+            //        if (!actual.Buida&&actual!=this)
+            //        {
+            //            distancia = Posicio.Distancia(referencia, actual);
+            //            interes = Interes(actual);
+            //            resultat += interes / distancia;
+            //        }
+            //    }
+            //}
 
-            return resultat;
+            //return resultat;
         }
 
-        /// <summary>
+        /// <summary> 
+        /// [DEPRECATED]
         /// Mètode atracció sobre taula de persones. Calcula l'atracció per cada persona decidint la que té més possibilitats d'acostar-se.
         /// </summary>
         /// <param name="fil"></param>
@@ -105,12 +104,15 @@ namespace ReunioSocial
         /// <param name="tp"></param>
         /// <returns></returns>
         private double Atraccio(int fil, int col, TaulaPersones tp)
-        {
+       {
+            /**************************************
+            * DEPRECATED
+            */
             double resultat = 0;
             double distancia = 0;
             Posicio referencia = new Posicio(fil, col);
             int interes;
-            foreach (Persona p in tp.Gent.Values)
+            foreach (Persona p in tp)
             {
                 if (p != this)
                 {
@@ -163,10 +165,12 @@ namespace ReunioSocial
         /// <returns></returns>
         public override string ToString()
         {
-            return this.nom;
+            return base.ToString() + this.nom;
         }
 
     }
+
+
 
 
  

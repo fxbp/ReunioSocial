@@ -24,6 +24,15 @@ namespace ReunioSocial
         }
 
         /// <summary>
+        /// Retornatrue si és un home.
+        /// </summary>
+        public override bool EsHome()
+        {
+            return true; 
+        }
+
+
+        /// <summary>
         /// Interès d'aquest home per una posició
         /// </summary>
         /// <param name="pos">Posició per la qual s'interessa</param>
@@ -31,21 +40,17 @@ namespace ReunioSocial
         public override int Interes(Posicio pos)
         {
             int resultat = 0;
-            if (pos.Buida) resultat = 0;
-            else
+            if (!pos.Buida)
             {
-                Persona p = (Persona)pos;
-                if (p.EsConvidat())
+                if (((Persona)pos).EsConvidat())
                 {
-                    if (p is Dona)
+                    if (!((Convidat)pos).EsHome())
                     {
-                        resultat += ((Dona)p).PlusSexe;
-
+                        resultat += ((Dona)pos).PlusSexe;
                     }
 
-                    if (Simpaties.Keys.Contains(p.Nom))
-                        resultat += Simpaties[p.Nom];
-                   
+                    if (Simpaties.Keys.Contains(((Persona)pos).Nom))
+                        resultat += Simpaties[((Persona)pos).Nom];
                 }
                 else
                     resultat+= 1;

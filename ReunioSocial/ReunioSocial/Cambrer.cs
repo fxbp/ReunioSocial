@@ -24,6 +24,16 @@ namespace ReunioSocial
 
         }
 
+        /// <summary>
+        /// Retorna que el Cambrer no és un convidat
+        /// </summary>
+        /// <returns>false</returns>
+        public override bool EsConvidat()
+        {
+            return false; 
+        }
+
+
         public static int NCambrer
         {
             get { return Cambrer.nCambrer; }
@@ -39,27 +49,19 @@ namespace ReunioSocial
         {
             int resultat=0;
             Persona p;
-            if(!pos.Buida)
+           
+            if (!pos.Buida)
             {
-                if (pos is Persona)
-                {
-                    p = (Persona)pos;
+                p = (Persona)pos;
 
-                    if (p.EsConvidat())
-                        resultat = 1;
-                    else
-                        resultat = -1;
-                }
+                if (p.EsConvidat())
+                    resultat = 1;
+                else
+                    resultat = -1;
             }
+            
             return resultat;
         }
-        /// <summary>
-        /// Retorna que el Cambrer no és un convidat
-        /// </summary>
-        /// <returns>false</returns>
-        public override bool EsConvidat()
-        {
-            return false;
-        }
+        
     }
 }

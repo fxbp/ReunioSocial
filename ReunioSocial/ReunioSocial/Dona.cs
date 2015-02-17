@@ -26,6 +26,16 @@ namespace ReunioSocial
         }
 
         /// <summary>
+        /// Retornatrue si és un Dona.
+        /// </summary>
+        public override bool EsHome()
+        {
+            return false; 
+        }
+
+
+
+        /// <summary>
         /// Interès d'aquest home per una posició
         /// </summary>
         /// <param name="pos">Posició per la qual s'interessa</param>
@@ -37,15 +47,15 @@ namespace ReunioSocial
             if (!pos.Buida)
             {
                 
-                    if(((Persona)pos).EsConvidat())
+                if(((Persona)pos).EsConvidat())
+                {
+                    if(((Convidat)pos).EsHome())
                     {
-                        if(pos is Home)
-                        {
-                            resultat+=plusSexe;
-                        }
-                        if (Simpaties.Keys.Contains(((Persona)pos).Nom))
-                            resultat += Simpaties[((Persona)pos).Nom];
-                    }  
+                        resultat+=plusSexe;
+                    }
+                    if (Simpaties.Keys.Contains(((Persona)pos).Nom))
+                        resultat += Simpaties[((Persona)pos).Nom];
+                }  
                
             }
             return resultat;

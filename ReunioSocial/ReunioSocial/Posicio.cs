@@ -11,6 +11,9 @@ namespace ReunioSocial
     {    
         protected int columna;
         protected int fila;
+        
+
+        //protected bool buida;
         /// <summary> 
         /// Crea una nova posició 
         /// </summary>  
@@ -29,7 +32,7 @@ namespace ReunioSocial
         
         public Posicio()
         {
-
+            
         }
 
        
@@ -55,7 +58,8 @@ namespace ReunioSocial
         /// </summary>
         public virtual bool Buida
         {
-            get { return true; }
+            get {return true; }
+           
         }
 
         /// <summary>
@@ -93,6 +97,18 @@ namespace ReunioSocial
             pitagoras = Math.Sqrt((Math.Pow(distancia1, 2)+ Math.Pow(distancia2, 2)));
 
             return pitagoras;
+        }
+
+
+        /// <summary>
+        /// Retorna un tostring de la posició
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (Buida) return "Buida";
+            else return "";
+            //return "["+Fila+","+Columna+"]";
         }
     }
 }
