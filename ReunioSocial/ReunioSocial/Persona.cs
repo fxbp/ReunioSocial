@@ -189,11 +189,11 @@ namespace ReunioSocial
         {
             this.r = r;
             Graus = new Dictionary<string, double>();
-            Graus.Add("Amunt", 0);
-            Graus.Add("Avall", 0);
-            Graus.Add("Esquerre", 0);
-            Graus.Add("Dreta", 0);
-            Graus.Add("Quiet", 0);
+            Graus.Add("Amunt", int.MinValue);
+            Graus.Add("Avall", int.MinValue);
+            Graus.Add("Esquerre", int.MinValue);
+            Graus.Add("Dreta", int.MinValue);
+            Graus.Add("Quiet", int.MinValue);
         }
 
         /// <summary>
@@ -266,7 +266,7 @@ namespace ReunioSocial
                     s = "Dreta";
                     break;
                 case Direccio.Esquerra:
-                    s = "Esquerra";
+                    s = "Esquerre";
                     break;
                 case Direccio.Quiet:
                     s = "Quiet";
@@ -290,7 +290,7 @@ namespace ReunioSocial
                 case "Avall":
                     res = Direccio.Avall;
                     break;
-                case "Esquerra":
+                case "Esquerre":
                     res = Direccio.Esquerra;
                     break;
                 case "Dreta":

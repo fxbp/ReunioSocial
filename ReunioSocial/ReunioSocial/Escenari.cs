@@ -115,14 +115,23 @@ namespace ReunioSocial
             Posicio aux = this[filDesti, colDesti];
             if (DestiValid(filDesti, colDesti))
             {
-                escenari[filDesti, colDesti] = escenari[filOrig, colOrig];
-                escenari[filOrig, colOrig] = aux;
+
+
+
+                int filaAux = escenari[filDesti, colDesti].Fila;
+                int colAux = escenari[filDesti, colDesti].Columna;
 
                 escenari[filDesti, colDesti].Fila = filOrig;
                 escenari[filDesti, colDesti].Columna = colOrig;
 
-                escenari[filOrig, colOrig].Fila = filDesti;
-                escenari[filOrig, colOrig].Columna = colDesti;
+                escenari[filOrig, colOrig].Fila = filaAux;
+                escenari[filOrig, colOrig].Columna = colAux;
+
+                escenari[filDesti, colDesti] = escenari[filOrig, colOrig];
+                escenari[filOrig, colOrig] = aux;
+
+
+                
             }
 
         }

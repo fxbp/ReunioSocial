@@ -64,7 +64,7 @@ namespace ReunioSocial
         /// <param name="conv">Convidat a afegir</param>
         public void Afegir(Persona pers)
         {
-            gent.Add(pers.Nom, pers);
+              gent.Add(pers.Nom, pers);
         }
 
         /// <summary>
