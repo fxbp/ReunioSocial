@@ -2,8 +2,5 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!-- Fem un merged de tots els diccionaris de recursos que seran estils de control personalitzats.-->
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary 
-            Source="/Principal;component/Themes/MetroQuadrat.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
+    
 </ResourceDictionary>
