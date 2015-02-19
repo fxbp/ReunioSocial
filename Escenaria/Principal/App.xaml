@@ -1,0 +1,19 @@
+﻿<Application x:Class="Principal.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Benvingut.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Fem un merge per barrejar tots els dieccionaris. -->
+            <ResourceDictionary.MergedDictionaries>
+                <!--Aquesta part té gràcia quan es fan estils i tal. -->
+                <ResourceDictionary Source="recursos/Brotxes.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="recursos/dibuixos.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="recursos/Estils.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Generic.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+
+           
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

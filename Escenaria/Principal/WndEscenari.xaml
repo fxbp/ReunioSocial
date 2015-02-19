@@ -1,0 +1,23 @@
+﻿<Window x:Class="Principal.WndEscenari"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Escenari"
+        Width="800" Height="600">
+    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border Style="{StaticResource ResourceKey=brdEscenari}">
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <UniformGrid x:Name="ugPista" Style="{StaticResource ResourceKey=uniformEscenariStyle}"></UniformGrid>
+                <Grid Height="auto" Width="auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                
+                    <Button Grid.Column="2" FontSize="20" Content="Cicle" Click="Button_Click"></Button>
+                
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Viewbox>
+</Window>
