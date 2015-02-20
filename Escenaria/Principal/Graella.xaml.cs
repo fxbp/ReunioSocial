@@ -42,7 +42,8 @@ namespace Principal
 
             int fila, columna;
             TextBlock lbl;
-            TextBlock actual;
+            TextBox txb;
+            TextBox actual;
             Grid provisional = new Grid();
             List<KeyValuePair<string, int>> simpaties;
             foreach (UIElement ui in grdSimpaties.Children)
@@ -64,8 +65,12 @@ namespace Principal
                             //per a cada elmeent dins les simpeties obte la columna on anira el convidat
                             //no es conte a si mateix
                             columna = columnes[kvp.Key];
-                            actual = new TextBlock();
+                            actual = new TextBox();
+                            Binding b = new Binding();
+                            b.Source = ((Convidat)lbl.Tag)[kvp.Key];
+                           // actual.SetBinding(TextBox.TextProperty, b);
                             actual.Text = kvp.Value.ToString();
+                            actual.Tag = kvp.Key;
                             provisional.Children.Add(actual);
                             actual.SetValue(Grid.RowProperty, fila);
                             actual.SetValue(Grid.ColumnProperty, columna);
@@ -80,15 +85,26 @@ namespace Principal
             foreach (UIElement ui in provisional.Children)
             {
 
-                lbl = ui as TextBlock;
-                actual = new TextBlock();
-                actual.Text = lbl.Text;
+                txb= ui as TextBox;
+                actual =  new TextBox();
+                actual.Tag = txb.Tag;
+                actual.Text = txb.Text;
+                actual.TextChanged+=actual_TextChanged;
                 grdSimpaties.Children.Add(actual);
-                actual.SetValue(Grid.RowProperty, lbl.GetValue(Grid.RowProperty));
-                actual.SetValue(Grid.ColumnProperty, lbl.GetValue(Grid.ColumnProperty));
+                actual.SetValue(Grid.RowProperty, txb.GetValue(Grid.RowProperty));
+                actual.SetValue(Grid.ColumnProperty, txb.GetValue(Grid.ColumnProperty));
 
             }
 
+        }
+
+        private void actual_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox txb = sender as TextBox;
+            int fila = 0;
+            int columna = (int)txb.GetValue(Grid.ColumnProperty);
+            
+            
         }
 
         private void CrearGraella(Escenari e)

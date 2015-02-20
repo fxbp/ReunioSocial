@@ -208,18 +208,21 @@ namespace ReunioSocial
         public void Posar(Persona pers)
         {
             if (!escenari[pers.Fila, pers.Columna].Buida) throw new Exception("La posicio ja està ocupada!!");
-            
-            escenari[pers.Fila, pers.Columna] = pers;
-            persones.Afegir(pers);
-            if (pers.EsConvidat())
+
+            if (!persones.Conte(pers.Nom))
             {
-                if (!((Convidat)pers).EsHome())
-                    nDones++;
+                escenari[pers.Fila, pers.Columna] = pers;
+                persones.Afegir(pers);
+                if (pers.EsConvidat())
+                {
+                    if (!((Convidat)pers).EsHome())
+                        nDones++;
+                    else
+                        nHomes++;
+                }
                 else
-                    nHomes++;
+                    nCambrers++;
             }
-            else
-                nCambrers++;
         }
 
 

@@ -36,7 +36,7 @@
   <ItemGroup>
     <Reference Include="ReunioSocial, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.dll</HintPath>
+      <HintPath>bin\Debug\ReunioSocial.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

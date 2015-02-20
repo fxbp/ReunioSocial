@@ -29,7 +29,7 @@ namespace Principal
         private List<string> dones;
         private Escenari escenari;
         private Random r;
-
+        Window gr;
 
         public WndEscenari(int nFiles, int nColumnes, int nDones, int nHomes, int nCambrers)
         {
@@ -52,9 +52,11 @@ namespace Principal
             GenerarSimpaties();
             
 
-            Graella gr = new Graella(escenari);
+            gr = new Graella(escenari);
+            
+          
             gr.Show();
-
+            gr.Focusable = true;
             ActualitzaEscenari();
 
 

@@ -34,6 +34,11 @@ namespace ReunioSocial
             set { gent[nom] = value;} 
         }
 
+        public bool Conte(string nom)
+        {
+            return gent.Keys.Contains(nom);
+        }
+
         /// <summary>
         /// Retorna la matriu de posicions de en forma de matriu de persones, totes les posicions de la taula que estan buides estan inicialitzades a null.
         /// </summary>
