@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Escenari"
         Width="800" Height="600">
-    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
         <Border Style="{StaticResource ResourceKey=brdEscenari}">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <UniformGrid x:Name="ugPista" Style="{StaticResource ResourceKey=uniformEscenariStyle}"></UniformGrid>
+                <UniformGrid x:Name="ugPista" Style="{StaticResource ResourceKey=uniformEscenariStyle}"/>
                 <Grid Height="auto" Width="auto">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

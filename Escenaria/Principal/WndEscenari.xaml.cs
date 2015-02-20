@@ -188,42 +188,53 @@ namespace Principal
         private void ActualitzaEscenari()
         {
             ugPista.Children.Clear();
+            
             foreach (Posicio p in escenari.EscenariToMatriusPosicions)
             {
-
-                Rectangle r = new Rectangle();
-                r.Height = 50;
-                r.Width = 80;
-                DrawingBrush db = (DrawingBrush)FindResource("buida");
-                if (db == null) r.Fill = Brushes.Black;
+                StackPanel sp = new StackPanel();
+                
+                Label lbNom = new Label();
+                //Rectangle rTerra = new Rectangle();
+                Rectangle rCara = new Rectangle();
+                //rTerra.Height = 50;
+                //rTerra.Width = 80;
+                rCara.Height = 80;
+                rCara.Width = 110;
+                DrawingBrush db = (DrawingBrush)FindResource("terra");
+                if (db == null)sp.Background = Brushes.Black; //rTerra.Fill = Brushes.Black;
                 else
                 {
-                    r.Fill = db;
+                    sp.Background = db;
                     
-                    /*
-                    TextBlock tb = new TextBlock();
-                    tb.Foreground = Brushes.Yellow;
-                    tb.Background = Brushes.Red;
-                     */
+
+                    //rTerra.Fill = db;
+
                     if (!p.Buida)
                     {
-                        if (!((Persona)p).EsConvidat()) r.Fill = (Brush)FindResource("cambrer");
+                        Persona person = p as Persona;
+                        if (!person.EsConvidat()) rCara.Fill = (Brush)FindResource("cambrer");
                         else
                         {
-                            if(((Convidat)p).EsHome())
-                                r.Fill = (Brush)FindResource("home");
-                            else r.Fill = (Brush)FindResource("dona");
+                            if (((Convidat)person).EsHome())
+                                rCara.Fill = (Brush)FindResource("home");
+                            else rCara.Fill = (Brush)FindResource("dona");
                         }
-                       
-                        // = ((Persona)p).Nom;
-                    }
-                }
-                /*else
-                {
-                    tb.Text = "Buida";
-                }*/
-                ugPista.Children.Add(r);
+                        lbNom.Content = person.Nom.ToString();
+                        lbNom.FontSize = 28;
+                        lbNom.FontWeight = FontWeights.Bold;
+                        lbNom.HorizontalAlignment = HorizontalAlignment.Center;
+                        lbNom.Margin=new Thickness(15,0,15,0);
+                        lbNom.Foreground = Brushes.Black;
 
+                        sp.Tag = person;
+                        
+                    }
+                    
+                    sp.Children.Add(rCara);
+                    sp.Children.Add(lbNom);
+                }
+                
+                ugPista.Children.Add(sp);
             }
         }
 
