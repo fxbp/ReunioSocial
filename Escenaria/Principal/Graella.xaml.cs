@@ -24,6 +24,9 @@ namespace Principal
         Dictionary<string, int> files;
         Dictionary<string, int> columnes;
         Escenari escenari;
+        Convidat[] taulaConvidats;
+
+
 
         public Graella(Escenari escenari)
         {
@@ -31,15 +34,18 @@ namespace Principal
             files = new Dictionary<string, int>();
             columnes = new Dictionary<string, int>();
             this.escenari = escenari;
-            CrearGraella(escenari);
-            MostrarSimpaties();
+            taulaConvidats = new Convidat[escenari.Homes + escenari.Dones];
+
+
+
+            //CrearGraella(escenari);
+            //MostrarSimpaties();
         }
 
         
 
         private void MostrarSimpaties()
         {
-
             int fila, columna;
             TextBlock lbl;
             TextBlock actual;
@@ -88,17 +94,21 @@ namespace Principal
                 actual.SetValue(Grid.ColumnProperty, lbl.GetValue(Grid.ColumnProperty));
 
             }
-
+            
         }
 
         private void CrearGraella(Escenari e)
         {
             int actual = 1;
             TextBlock lblPersonaActual;
-            foreach (Persona p in e.TaulaPersones.Gent.Values)
+            foreach (Persona p in e.TaulaPersones)
             {
-                if (p is Convidat)
+                if (p.EsConvidat())
                 {
+
+
+
+                    
                     //afageix una fila i una columna mes
                     grdSimpaties.RowDefinitions.Add(new RowDefinition());
                     grdSimpaties.ColumnDefinitions.Add(new ColumnDefinition());
@@ -126,6 +136,7 @@ namespace Principal
                     //diccionari de columnes que conte el nom de la persona i la columna que li toca
                     columnes.Add(p.Nom, actual);
                     actual++;
+                    
                 }
             }
         }
