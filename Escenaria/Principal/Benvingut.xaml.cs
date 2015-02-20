@@ -59,7 +59,7 @@ namespace Principal
                     (int)sldHomes.Value,
                     (int)sldCambrers.Value);
 
-                esc.ShowDialog();
+                esc.Show();
             }
             this.Close();
         }
