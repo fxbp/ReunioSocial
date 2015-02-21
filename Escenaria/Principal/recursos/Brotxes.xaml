@@ -17,6 +17,6 @@
     </RadialGradientBrush>
 
     <!-- LLETRES -->
-    <SolidColorBrush x:Key="FonsPistaResource" Color="Black"/>
+    <SolidColorBrush x:Key="FonsPistaResource" Color="#FF7BC588"/>
     
 </ResourceDictionary>
