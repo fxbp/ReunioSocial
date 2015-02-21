@@ -60,6 +60,7 @@ namespace Principal
                     (int)sldCambrers.Value);
 
                 esc.Show();
+                
             }
             this.Close();
         }

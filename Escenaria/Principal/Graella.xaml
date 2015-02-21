@@ -3,13 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Graella" MinHeight="600" MinWidth="600">
     <Viewbox>
-        <Grid  x:Name="grdSimpaties">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Grid x:Name="grdSimpaties">
+            
         </Grid>
     </Viewbox>
 </Window>

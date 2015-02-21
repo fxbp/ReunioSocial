@@ -200,13 +200,14 @@ namespace Principal
                 if (db == null) r.Fill = Brushes.Black;
                 else
                 {
-                    r.Fill = db;
+                   
                     
-                    /*
+                    
                     TextBlock tb = new TextBlock();
                     tb.Foreground = Brushes.Yellow;
                     tb.Background = Brushes.Red;
-                     */
+                     
+                    //r.Fill = db;
                     if (!p.Buida)
                     {
                         if (!((Persona)p).EsConvidat()) r.Fill = (Brush)FindResource("cambrer");
@@ -238,6 +239,16 @@ namespace Principal
         {
             escenari.Cicle();
             ActualitzaEscenari();
+        }
+
+        /// <summary>
+        /// Esdevenimen al tencar l'escenari. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            gr.Close();
         }
 
 

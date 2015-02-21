@@ -48,8 +48,7 @@
                 <Slider x:Name="sldDones" 
                         Value="3"
                         Style="{StaticResource ResourceKey=sliderStyle}" 
-                        Maximum="20" 
-                        Minimum="1"></Slider>
+                        Maximum="20"/>
                 <TextBlock  Style="{StaticResource ResourceKey=h2NumberStyle}"
                            Text="{Binding Value, ElementName=sldDones}"></TextBlock>
             </WrapPanel>
@@ -61,8 +60,7 @@
                 <Slider x:Name="sldHomes" 
                         Value="3"
                         Style="{StaticResource ResourceKey=sliderStyle}" 
-                        Maximum="20" 
-                        Minimum="1"></Slider>
+                        Maximum="20"/>
                 <TextBlock Style="{StaticResource ResourceKey=h2NumberStyle}"
                            Text="{Binding Value, ElementName=sldHomes}"></TextBlock>
             </WrapPanel>
