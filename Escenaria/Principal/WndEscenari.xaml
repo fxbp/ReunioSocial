@@ -7,7 +7,6 @@
         <Border Style="{StaticResource ResourceKey=brdEscenari}">
             <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <UniformGrid x:Name="ugPista" Style="{StaticResource ResourceKey=uniformEscenariStyle}"></UniformGrid>
-                <UniformGrid x:Name="ugPista" Style="{StaticResource ResourceKey=uniformEscenariStyle}"/>
                 <Grid Height="auto" Width="auto">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

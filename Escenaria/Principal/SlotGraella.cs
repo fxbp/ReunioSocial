@@ -98,7 +98,7 @@ namespace Principal
         /// <param name="actual"></param>
         /// <param name="agrada"></param>
         /// <returns></returns>
-        private static int CalculaSimpatia(Convidat actual, Convidat agrada)
+        public static int CalculaSimpatia(Convidat actual, Convidat agrada)
         {
 
             int total = actual[agrada.Nom];

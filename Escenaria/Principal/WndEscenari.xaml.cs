@@ -208,7 +208,7 @@ namespace Principal
                 //rTerra.Width = 80;
                 rCara.Height = 80;
                 rCara.Width = 110;
-                DrawingBrush db = (DrawingBrush)FindResource("terra");
+                db = (DrawingBrush)FindResource("terra");
                 if (db == null)sp.Background = Brushes.Black; //rTerra.Fill = Brushes.Black;
                 else
                 {
