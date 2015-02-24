@@ -116,7 +116,7 @@ tb.Background = Brushes.Yellow;
                         TextBox sexe = new TextBox();
                         sexe.Text = matriuSlots[fila, col].ExtreuPlusSexe(matriuSlots[fila, 0].ConvidatFila);
                         sexe.TextChanged += tb_TextChanged;
-                        sexe.LostFocus += tb_LostFocus;
+                        //sexe.LostFocus += tb_LostFocus;
 sexe.Background = Brushes.BlueViolet;
                         retorn = (UIElement)sexe;
                     }
@@ -125,7 +125,8 @@ sexe.Background = Brushes.BlueViolet;
                         TextBox tx = new TextBox();
                         tx.Text = matriuSlots[fila, col].ToString();
                         tx.TextChanged += tb_TextChanged;
-                        tx.LostFocus += tb_LostFocus;
+                        //tx.LostFocus += tb_LostFocus;
+                        
                         retorn = (UIElement)tx;
 
                     }
@@ -136,7 +137,7 @@ sexe.Background = Brushes.BlueViolet;
                 TextBox sexe = new TextBox();
                 sexe.Text = "Plus Sexe";
                 sexe.TextChanged += tb_TextChanged;
-                sexe.LostFocus += tb_LostFocus;
+                //sexe.LostFocus += tb_LostFocus;
 sexe.Background = Brushes.BlueViolet;
                 retorn = (UIElement)sexe;
 
@@ -265,6 +266,8 @@ sexe.Background = Brushes.BlueViolet;
             if (Regex.IsMatch(val, @"^[\-\+]?\s*\d+\s*$"))
             {
                 valor = Convert.ToInt32(val);
+                //sembla que el lost focus no va de vegades. posem que si es un valor valid que el canvii.
+                CanviValor(tb);
             }
             else
             {
@@ -277,10 +280,10 @@ sexe.Background = Brushes.BlueViolet;
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tb_LostFocus(object sender, RoutedEventArgs e)
+        private void CanviValor(TextBox tb)
         {
             // REcopero el textbox
-            TextBox tb = (TextBox)e.Source;
+            //TextBox tb = (TextBox)e.Source;
             //Si s'ha actualitzat el valor algun cop i els valors son diferents.
             if (valor != default(int))
             {
@@ -306,6 +309,7 @@ sexe.Background = Brushes.BlueViolet;
 
 
         }
+       
 
        
         

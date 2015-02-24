@@ -100,10 +100,10 @@ namespace Principal
         /// <returns></returns>
         public static int CalculaSimpatia(Convidat actual, Convidat agrada)
         {
-
+            //provem sense el plus sexe aviam si queda mes clar on van per debugar
             int total = actual[agrada.Nom];
-            if ((actual.EsHome() && !agrada.EsHome()) || (!actual.EsHome() && agrada.EsHome()))
-                total += actual.PlusSexe;
+            //if ((actual.EsHome() && !agrada.EsHome()) || (!actual.EsHome() && agrada.EsHome()))
+                //total += actual.PlusSexe;
             return total;
 
         }

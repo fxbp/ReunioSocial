@@ -259,7 +259,7 @@ namespace Principal
                 {
                     tb.Text = "Buida";
                 }*/
-                ugPista.Children.Add(r);
+                //ugPista.Children.Add(r);
 
                 
                 ugPista.Children.Add(sp);
@@ -274,6 +274,7 @@ namespace Principal
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             escenari.Cicle();
+          //mirar events.
             ActualitzaEscenari();
         }
 
