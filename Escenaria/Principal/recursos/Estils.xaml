@@ -17,7 +17,7 @@
     </Style>
 
     <!-- UNIFORMGRID -->
-    <Style x:Key="uniformEscenariStyle" TargetType="UniformGrid">
+    <Style x:Key="uniformEscenariStyle" TargetType="Grid">
         <Setter Property="Margin" Value="20"/>
         <Setter Property="Background" Value="{StaticResource ResourceKey=FonsPistaResource}"/>
     </Style>

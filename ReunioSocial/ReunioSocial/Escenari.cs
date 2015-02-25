@@ -8,7 +8,8 @@ namespace ReunioSocial
 {
     public class Escenari
     {
-        public event EventHandler ShaMogut;
+        public delegate void MourePosicioEventHandler(Posicio anterior, Posicio actual);
+        public event MourePosicioEventHandler Moguda;
         Posicio[,] escenari;
         TaulaPersones persones;
         int files;
@@ -117,7 +118,8 @@ namespace ReunioSocial
             if (DestiValid(filDesti, colDesti))
             {
 
-
+                //llença l'esdeveniment amb la posicio anterior i la nova
+                Moguda(escenari[filOrig, colOrig], escenari[filDesti, colDesti]);
 
                 int filaAux = escenari[filDesti, colDesti].Fila;
                 int colAux = escenari[filDesti, colDesti].Columna;
@@ -130,24 +132,15 @@ namespace ReunioSocial
 
                 escenari[filDesti, colDesti] = escenari[filOrig, colOrig];
                 escenari[filOrig, colOrig] = aux;
-                
-                
 
+
+                
                 
             }
 
         }
 
 
-        protected virtual void OnShaMogut(EventArgs e)
-        {
-           
-            EventHandler handler = ShaMogut;
-            if(handler!=null)
-            {
-                handler(this, e);
-            }
-        }
         /// <summary>
         /// Retorna la Posició que hi ha en una coordenada donada
         /// </summary>
@@ -259,7 +252,7 @@ namespace ReunioSocial
             {
                 posNova = CalculaPosicioNova(p.Fila,p.Columna,p.OnVaig(this));
                 Moure(p.Fila, p.Columna, posNova.Fila, posNova.Columna);
-                OnShaMogut(EventArgs.Empty);
+               
             }
 
         }

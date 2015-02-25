@@ -24,20 +24,21 @@ namespace Principal
     {
         private const string FITXERHOMES = @"../../DataSource/Homes.txt";
         private const string FITXERDONES = @"../../DataSource/dones.txt";
-
+        private Dictionary<string, StackPanel> diccionariStacks;
         private List<string> homes;
         private List<string> dones;
         private Escenari escenari;
         private Random r;
         Window gr;
+    
 
         public WndEscenari(int nFiles, int nColumnes, int nDones, int nHomes, int nCambrers)
         {
             r = new Random();
             escenari = new Escenari(nFiles, nColumnes);
-
+            diccionariStacks = new Dictionary<string, StackPanel>();
             
-
+            escenari.Moguda += escenari_Moguda;
             EmplenaNomsDones();
             EmplenaNomsHomes();
 
@@ -46,11 +47,11 @@ namespace Principal
             GeneraCambrers(nCambrers);
             InitializeComponent();
 
-            ugPista.Rows = nFiles;
-            ugPista.Columns = nColumnes;
-            
+            //ugPista.Rows = nFiles;
+           // ugPista.Columns = nColumnes;
+            GenerarPista(nFiles, nColumnes);
             GenerarSimpaties();
-            
+           
 
             gr = new Graella(escenari);
             
@@ -61,6 +62,8 @@ namespace Principal
 
 
         }
+
+             
 
         /**********************************************************************
          * GENERACIONS AUTOMÀTIQUES
@@ -186,14 +189,26 @@ namespace Principal
             sr.Close();
             fs.Close();
         }
-
+        /// <summary>
+        /// S'ha canviat el ugrid per un grid ara s'han de generar les files i columnes
+        /// </summary>
+        private void GenerarPista(int files, int columnes)
+        {
+            for(int i=0;i<files;i++)
+            {
+                ugPista.RowDefinitions.Add(new RowDefinition());
+            }  
+            for(int j=0;j<columnes;j++)
+            {
+                ugPista.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+        }
         private void ActualitzaEscenari()
         {
             ugPista.Children.Clear();
-            
             foreach (Posicio p in escenari.EscenariToMatriusPosicions)
             {
-
+                
                 Rectangle r = new Rectangle();
                 r.Height = 50;
                 r.Width = 80;
@@ -249,6 +264,7 @@ namespace Principal
                         lbNom.Foreground = Brushes.Black;
 
                         sp.Tag = person;
+                       
                         
                     }
                     
@@ -261,8 +277,12 @@ namespace Principal
                 }*/
                 //ugPista.Children.Add(r);
 
-                
                 ugPista.Children.Add(sp);
+                sp.SetValue(Grid.RowProperty, p.Fila);
+                sp.SetValue(Grid.ColumnProperty, p.Columna);
+                diccionariStacks.Add((p.Fila.ToString() + "," + p.Columna.ToString()), sp);
+
+                
             }
         }
 
@@ -275,8 +295,34 @@ namespace Principal
         {
             escenari.Cicle();
           //mirar events.
-            ActualitzaEscenari();
+            
+           // ActualitzaEscenari();
         }
+
+        /// <summary>
+        /// Esdeveniment per acutalitzar les posicions
+        /// </summary>
+        /// <param name="anterior"></param>
+        /// <param name="actual"></param>
+        void escenari_Moguda(Posicio anterior, Posicio actual)
+        {
+            StackPanel sp = diccionariStacks[anterior.Fila.ToString() + "," + anterior.Columna.ToString()];
+            StackPanel sp2 = diccionariStacks[actual.Fila.ToString() + "," + actual.Columna.ToString()];
+            int col2 = (int)sp2.GetValue(Grid.ColumnProperty);
+            int col1 = (int)sp.GetValue(Grid.ColumnProperty);
+            int fil2 = (int)sp2.GetValue(Grid.RowProperty);
+            int fil1 = (int)sp.GetValue(Grid.RowProperty);
+           
+            sp.SetValue(Grid.RowProperty, actual.Fila);
+            sp.SetValue(Grid.RowProperty, actual.Columna);
+            sp2.SetValue(Grid.RowProperty, anterior.Fila);
+            sp2.SetValue(Grid.ColumnProperty, anterior.Columna);
+            sp2.SetValue(Grid.ZIndexProperty, 100);
+            sp.SetValue(Grid.ZIndexProperty, 100);
+        }
+
+        
+        
 
         /// <summary>
         /// Esdevenimen al tencar l'escenari. 
