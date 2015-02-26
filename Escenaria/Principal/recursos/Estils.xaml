@@ -15,11 +15,9 @@
         <Setter Property="MinWidth" Value="625"/>
         <Setter Property="MinHeight" Value="450"/>
     </Style>
-
-    <!-- UNIFORMGRID -->
-    <Style x:Key="uniformEscenariStyle" TargetType="Grid">
+    <Style x:Key="gridEscenariStyle" TargetType="Grid">
         <Setter Property="Margin" Value="20"/>
-        <Setter Property="Background" Value="{StaticResource ResourceKey=FonsPistaResource}"/>
+        <Setter Property="Background" Value="{StaticResource ResourceKey=fons}"/>
     </Style>
 
     <!-- SLIDERS -->
@@ -34,6 +32,12 @@
         </Style.Triggers>
     </Style>
 
+    <!-- RECTANGLES -->
+    <Style x:Key="rCaraStyle" TargetType="Rectangle">
+        <Setter Property="Height" Value="80"/>
+        <Setter Property="Width" Value="110"/>
+    </Style>
+    
     <!-- TEXTBLOCKS -->
     <Style x:Key="h1Style" TargetType="TextBlock">
         <Setter Property="FontSize" Value="20"/>
@@ -53,6 +57,7 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
 
+<<<<<<< HEAD
     
     <!--********************************************
         Estils per els noms i valors de la graella 
@@ -110,4 +115,17 @@
         <Setter Property="BorderThickness" Value="0.5"></Setter>
         <Setter Property="BorderBrush" Value="Black"></Setter>
     </Style>
+=======
+    <!-- LABELS -->
+    <Style x:Key="nomsStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="28"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="15,0,15,0"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+
+>>>>>>> a001a9b033eddaade75826046f5e20147bf4bc6e
 </ResourceDictionary>
