@@ -72,6 +72,10 @@ namespace Principal
         {
             GeneraColumnes();
             GeneraFiles();
+
+            // Assigno estils a la graella visual. 
+            grdSimpaties.Style = (Style)FindResource("GridGraellaStyle");
+
             UIElement element;
             for (int i = 0; i < matriuSlots.GetLength(0); i++)
             {
@@ -102,11 +106,16 @@ namespace Principal
                 if (fila == 0 || col == 0)
                 {
                     TextBlock tb = new TextBlock();
-tb.Background = Brushes.Yellow;                   
                     if (matriuSlots[fila, col].teConvidatFila)
-                        tb.Text = matriuSlots[fila, col].ConvidatFila.ToString();                        
-                    else
+                    {
+                        tb.Text = matriuSlots[fila, col].ConvidatFila.ToString();
+                        tb.Style = (Style)FindResource("NomsFilesStyle");
+                    }
+                    else 
+                    { 
                         tb.Text = matriuSlots[fila, col].ConvidatColumna.ToString();
+                        tb.Style = (Style)FindResource("NomsColumnesStyle");
+                    }
                     retorn = (UIElement)tb;
                 }
                 else
@@ -114,19 +123,17 @@ tb.Background = Brushes.Yellow;
                     if (fila == col)
                     {
                         TextBox sexe = new TextBox();
+                        sexe.Style = (Style)FindResource("TextBoxSexeStyle");
                         sexe.Text = matriuSlots[fila, col].ExtreuPlusSexe(matriuSlots[fila, 0].ConvidatFila);
-                        sexe.TextChanged += tb_TextChanged;
-                        //sexe.LostFocus += tb_LostFocus;
-sexe.Background = Brushes.BlueViolet;
+                        sexe.TextChanged += tb_TextChanged;                        
                         retorn = (UIElement)sexe;
                     }
                     else
                     {
                         TextBox tx = new TextBox();
+                        tx.Style = (Style)FindResource("TextBoxStyle");
                         tx.Text = matriuSlots[fila, col].ToString();
-                        tx.TextChanged += tb_TextChanged;
-                        //tx.LostFocus += tb_LostFocus;
-                        
+                        tx.TextChanged += tb_TextChanged;         
                         retorn = (UIElement)tx;
 
                     }
@@ -134,18 +141,18 @@ sexe.Background = Brushes.BlueViolet;
             }
             else
             {
-                TextBox sexe = new TextBox();
-                sexe.Text = "Plus Sexe";
-                sexe.TextChanged += tb_TextChanged;
-                //sexe.LostFocus += tb_LostFocus;
-sexe.Background = Brushes.BlueViolet;
+                TextBlock sexe = new TextBlock();
+                sexe.Style = (Style)FindResource("CasellaSexeStyle");
+                sexe.Text = "Plus Sexe";                
                 retorn = (UIElement)sexe;
 
             }
-            
-            retorn.SetValue(Grid.RowProperty, fila);
-            retorn.SetValue(Grid.ColumnProperty, col);
-            return retorn;
+            Border bd = new Border();
+            bd.Style = (Style)FindResource("Borders");
+            bd.Child = retorn;
+            bd.SetValue(Grid.RowProperty, fila);
+            bd.SetValue(Grid.ColumnProperty, col);
+            return (UIElement)bd;
         }
 
        

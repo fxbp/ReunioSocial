@@ -18,5 +18,9 @@
 
     <!-- LLETRES -->
     <SolidColorBrush x:Key="FonsPistaResource" Color="#FF7BC588"/>
+    <SolidColorBrush x:Key="ForegroundHomes" Color="Blue"/>
+    <SolidColorBrush x:Key="ForegroundDones" Color="Red"/>
+    <SolidColorBrush x:Key="ForegroundCambrers" Color="Black"/>
+    
     
 </ResourceDictionary>

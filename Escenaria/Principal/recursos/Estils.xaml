@@ -53,5 +53,61 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
 
-
+    
+    <!--********************************************
+        Estils per els noms i valors de la graella 
+    -->
+    
+    <!-- GRID -->
+    <Style x:Key="GridGraellaStyle" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource FonsGradientResource}"/>
+    </Style>
+    
+    <!-- TEXTBLOCK  -->
+    <Style x:Key="NomsColumnesStyle" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="LayoutTransform" Value="{DynamicResource ResourceKey=OriVerticalStyle}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Blue"/>
+    </Style>
+    <Style x:Key="NomsFilesStyle" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Blue"/>
+    </Style>
+    <Style x:Key="CasellaSexeStyle" TargetType="TextBlock">
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
+    <!-- TEXTBOX  -->
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MaxWidth" Value="25"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="Blue"/>
+    </Style>
+    <Style x:Key="TextBoxSexeStyle" TargetType="TextBox">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MaxWidth" Value="25"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
+    <!-- Recursos dinamics per les rotacions del text. -->
+    <RotateTransform x:Key="OriVerticalStyle" Angle="270"/>
+    <Style x:Key="Borders" TargetType="Border">
+        <Setter Property="BorderThickness" Value="0.5"></Setter>
+        <Setter Property="BorderBrush" Value="Black"></Setter>
+    </Style>
 </ResourceDictionary>
