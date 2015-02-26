@@ -16,6 +16,7 @@ using ReunioSocial;
 using System.IO;
 using System.Threading;
 using System.Windows.Threading;
+using System.Windows.Media.Animation;
 
 namespace Principal
 {
@@ -24,6 +25,7 @@ namespace Principal
     /// </summary>
     public partial class WndEscenari : Window
     {
+        public const double SEGONSPAUSA = 2;
         private const string FITXERHOMES = @"../../DataSource/Homes.txt";
         private const string FITXERDONES = @"../../DataSource/dones.txt";
         private Dictionary<string, StackPanel> diccionariStacks;
@@ -286,10 +288,22 @@ namespace Principal
         {
             StackPanel sp = diccionariStacks[anterior.Fila.ToString() + "," + anterior.Columna.ToString()];
             StackPanel sp2 = diccionariStacks[actual.Fila.ToString() + "," + actual.Columna.ToString()];
-           
+
+            Direccio dir;
+            if (!anterior.Buida)
+            {
+                dir = ((Persona)anterior).DireccioActual;
+                Transicio(sp, dir);
+            }
+            else
+            {
+                dir = ((Persona)actual).OnVaig(escenari);
+                Transicio(sp2, dir);
+            }
+
             ugPista.Children.Remove(sp);
             ugPista.Children.Remove(sp2);
-           
+
             ugPista.Children.Add(sp);
             sp.SetValue(Grid.RowProperty, actual.Fila);
             sp.SetValue(Grid.ColumnProperty, actual.Columna);
@@ -299,12 +313,65 @@ namespace Principal
             sp2.SetValue(Grid.ColumnProperty, anterior.Columna);
 
             //Modifica el diccionari perque apunti al stackpanel correcte
-            diccionariStacks[anterior.Fila.ToString() + "," + anterior.Columna.ToString()]=sp2;
-            diccionariStacks[actual.Fila.ToString() + "," + actual.Columna.ToString()]=sp;
-            
+            diccionariStacks[anterior.Fila.ToString() + "," + anterior.Columna.ToString()] = sp2;
+            diccionariStacks[actual.Fila.ToString() + "," + actual.Columna.ToString()] = sp;
+
         }
 
-        
+        private Thickness RetornaDireccioMargin(Direccio dir)
+        {
+            Thickness th = new Thickness();
+            switch (dir)
+            {
+                case Direccio.Amunt:
+                    th.Top = -130;
+                    break;
+                case Direccio.Avall:
+                    th.Bottom = -130;
+                    break;
+                case Direccio.Dreta:
+                    th.Right = -170 * 2;
+                    break;
+                case Direccio.Esquerra:
+                    th.Left = -170 * 2;
+                    break;
+
+            }
+            return th;
+        }
+
+        private void Transicio(StackPanel sp, Direccio dir)
+        {
+            Storyboard story = new Storyboard();
+            ThicknessAnimation animacioStack1 = new ThicknessAnimation();
+
+            Thickness margin = RetornaDireccioMargin(dir);
+
+            story.Children.Add(animacioStack1);
+
+            sp.SetValue(Grid.ZIndexProperty, 100);
+            animacioStack1.To = margin;
+            animacioStack1.Duration = TimeSpan.FromSeconds(SEGONSPAUSA / 2);
+
+            Storyboard.SetTarget(animacioStack1, sp);
+            Storyboard.SetTargetProperty(animacioStack1, new PropertyPath(StackPanel.MarginProperty));
+
+            story.Begin();
+            Pausa(SEGONSPAUSA);
+
+            sp.BeginAnimation(StackPanel.MarginProperty, null);
+        }
+
+        private void Pausa(double segons)
+        {
+            var frame = new DispatcherFrame();
+            new Thread((ThreadStart)(() =>
+            {
+                Thread.Sleep(TimeSpan.FromSeconds(segons));
+                frame.Continue = false;
+            })).Start();
+            Dispatcher.PushFrame(frame);
+        }
         
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace ReunioSocial
         protected string nom;
         // Aleatori que s'utilitza per la direcció.
         private static Random r=new Random();
-
+        protected Direccio actual;
     
      /// <summary>
      /// Crea una persona
@@ -62,7 +62,10 @@ namespace ReunioSocial
             get { return false; }
         }
 
-
+        public Direccio DireccioActual
+        {
+            get { return actual; }
+        }
         /// <summary>
         /// Atraccio de persona sobre una determinada posicio
         /// </summary>
@@ -142,7 +145,8 @@ namespace ReunioSocial
             if (esc.DestiValid(fila, columna - 1)) gd.Assigna(Direccio.Esquerra, Atraccio(fila, columna - 1, esc.TaulaPersones));
             if (esc.DestiValid(fila, columna + 1)) gd.Assigna(Direccio.Dreta, Atraccio(fila, columna + 1, esc.TaulaPersones));
             // Retorno la que té preferència. En cas d'empat ja sap calcular-se el random ella sola gràcies a que li he passat anteriorment.
-            return gd.DireccióResultat();
+            actual = gd.DireccióResultat();
+            return actual;
         }
 
         /// <summary>
