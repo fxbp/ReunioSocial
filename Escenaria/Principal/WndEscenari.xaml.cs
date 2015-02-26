@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ReunioSocial;
 using System.IO;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace Principal
 {
@@ -58,7 +60,7 @@ namespace Principal
           
             gr.Show();
             gr.Focusable = true;
-            ActualitzaEscenari();
+            CrearEscenariGrafic();
 
 
         }
@@ -196,14 +198,18 @@ namespace Principal
         {
             for(int i=0;i<files;i++)
             {
-                ugPista.RowDefinitions.Add(new RowDefinition());
+                RowDefinition ro = new RowDefinition();
+                ro.Height = new GridLength(130);
+                ugPista.RowDefinitions.Add(ro);
             }  
             for(int j=0;j<columnes;j++)
             {
-                ugPista.ColumnDefinitions.Add(new ColumnDefinition());
+                ColumnDefinition co = new ColumnDefinition();
+                co.Width = new GridLength(170);
+                ugPista.ColumnDefinitions.Add(co);
             }
         }
-        private void ActualitzaEscenari()
+        private void CrearEscenariGrafic()
         {
             ugPista.Children.Clear();
             foreach (Posicio p in escenari.EscenariToMatriusPosicions)
@@ -228,8 +234,6 @@ namespace Principal
                 else
                 {
                    
-                    
-                    
                     TextBlock tb = new TextBlock();
                     tb.Foreground = Brushes.Yellow;
                     tb.Background = Brushes.Red;
@@ -242,14 +246,14 @@ namespace Principal
 
                     if (!p.Buida)
                     {
-                        if (!((Persona)p).EsConvidat()) r.Fill = (Brush)FindResource("cambrer");
+                        //if (!((Persona)p).EsConvidat()) r.Fill = (Brush)FindResource("cambrer");
                         Persona person = p as Persona;
                         if (!person.EsConvidat()) rCara.Fill = (Brush)FindResource("cambrer");
                         else
                         {
-                            if(((Convidat)p).EsHome())
-                                r.Fill = (Brush)FindResource("home");
-                            else r.Fill = (Brush)FindResource("dona");
+                            //if(((Convidat)p).EsHome())
+                            //    r.Fill = (Brush)FindResource("home");
+                            //else r.Fill = (Brush)FindResource("dona");
                             if (((Convidat)person).EsHome())
                                 rCara.Fill = (Brush)FindResource("home");
                             else rCara.Fill = (Brush)FindResource("dona");
@@ -263,9 +267,7 @@ namespace Principal
                         lbNom.Margin=new Thickness(15,0,15,0);
                         lbNom.Foreground = Brushes.Black;
 
-                        sp.Tag = person;
-                       
-                        
+                        sp.Tag = person; 
                     }
                     
                     sp.Children.Add(rCara);
@@ -281,8 +283,7 @@ namespace Principal
                 sp.SetValue(Grid.RowProperty, p.Fila);
                 sp.SetValue(Grid.ColumnProperty, p.Columna);
                 diccionariStacks.Add((p.Fila.ToString() + "," + p.Columna.ToString()), sp);
-
-                
+      
             }
         }
 
@@ -306,19 +307,35 @@ namespace Principal
         /// <param name="actual"></param>
         void escenari_Moguda(Posicio anterior, Posicio actual)
         {
+
+            this.Dispatcher.Invoke(DispatcherPriority.Normal,
+                    new Action(() => CanviarPosicions(anterior, actual)));
+       
+          
+        }
+
+
+
+        private void CanviarPosicions(Posicio anterior, Posicio actual)
+        {
             StackPanel sp = diccionariStacks[anterior.Fila.ToString() + "," + anterior.Columna.ToString()];
             StackPanel sp2 = diccionariStacks[actual.Fila.ToString() + "," + actual.Columna.ToString()];
-            int col2 = (int)sp2.GetValue(Grid.ColumnProperty);
-            int col1 = (int)sp.GetValue(Grid.ColumnProperty);
-            int fil2 = (int)sp2.GetValue(Grid.RowProperty);
-            int fil1 = (int)sp.GetValue(Grid.RowProperty);
            
+            ugPista.Children.Remove(sp);
+            ugPista.Children.Remove(sp2);
+           
+            ugPista.Children.Add(sp);
             sp.SetValue(Grid.RowProperty, actual.Fila);
-            sp.SetValue(Grid.RowProperty, actual.Columna);
+            sp.SetValue(Grid.ColumnProperty, actual.Columna);
+
+            ugPista.Children.Add(sp2);
             sp2.SetValue(Grid.RowProperty, anterior.Fila);
             sp2.SetValue(Grid.ColumnProperty, anterior.Columna);
-            sp2.SetValue(Grid.ZIndexProperty, 100);
-            sp.SetValue(Grid.ZIndexProperty, 100);
+
+            //Modifica el diccionari perque apunti al stackpanel correcte
+            diccionariStacks[anterior.Fila.ToString() + "," + anterior.Columna.ToString()]=sp2;
+            diccionariStacks[actual.Fila.ToString() + "," + actual.Columna.ToString()]=sp;
+            
         }
 
         

@@ -119,7 +119,7 @@ namespace ReunioSocial
             {
 
                 //llença l'esdeveniment amb la posicio anterior i la nova
-                Moguda(escenari[filOrig, colOrig], escenari[filDesti, colDesti]);
+               Moguda(escenari[filOrig, colOrig], escenari[filDesti, colDesti]);
 
                 int filaAux = escenari[filDesti, colDesti].Fila;
                 int colAux = escenari[filDesti, colDesti].Columna;
