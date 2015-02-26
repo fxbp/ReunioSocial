@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9B714A9B-6257-4B8B-AA55-B8549735B8B7}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Principal</RootNamespace>
     <AssemblyName>Principal</AssemblyName>
@@ -136,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DataSource\Dones.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\fons.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

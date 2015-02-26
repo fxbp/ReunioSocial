@@ -214,58 +214,29 @@ namespace Principal
             ugPista.Children.Clear();
             foreach (Posicio p in escenari.EscenariToMatriusPosicions)
             {
-                
-                Rectangle r = new Rectangle();
-                r.Height = 50;
-                r.Width = 80;
-                DrawingBrush db = (DrawingBrush)FindResource("buida");
-                if (db == null) r.Fill = Brushes.Black;
-                StackPanel sp = new StackPanel();
-                
+                StackPanel sp = new StackPanel();      
                 Label lbNom = new Label();
-                //Rectangle rTerra = new Rectangle();
                 Rectangle rCara = new Rectangle();
-                //rTerra.Height = 50;
-                //rTerra.Width = 80;
-                rCara.Height = 80;
-                rCara.Width = 110;
-                db = (DrawingBrush)FindResource("terra");
-                if (db == null)sp.Background = Brushes.Black; //rTerra.Fill = Brushes.Black;
+                DrawingBrush db = (DrawingBrush)FindResource("terra");
+                lbNom.Style = (Style)FindResource("nomsStyle");                
+                rCara.Style = (Style)FindResource("rCaraStyle");           
+                if (db == null)sp.Background = Brushes.Black; 
                 else
-                {
-                   
-                    TextBlock tb = new TextBlock();
-                    tb.Foreground = Brushes.Yellow;
-                    tb.Background = Brushes.Red;
-                     
-                    //r.Fill = db;
-                    sp.Background = db;
-                    
-
-                    //rTerra.Fill = db;
+                {               
+                    //sp.Background = db;
 
                     if (!p.Buida)
                     {
-                        //if (!((Persona)p).EsConvidat()) r.Fill = (Brush)FindResource("cambrer");
                         Persona person = p as Persona;
                         if (!person.EsConvidat()) rCara.Fill = (Brush)FindResource("cambrer");
                         else
                         {
-                            //if(((Convidat)p).EsHome())
-                            //    r.Fill = (Brush)FindResource("home");
-                            //else r.Fill = (Brush)FindResource("dona");
                             if (((Convidat)person).EsHome())
                                 rCara.Fill = (Brush)FindResource("home");
                             else rCara.Fill = (Brush)FindResource("dona");
                         }
                        
-                        // = ((Persona)p).Nom;
                         lbNom.Content = person.Nom.ToString();
-                        lbNom.FontSize = 28;
-                        lbNom.FontWeight = FontWeights.Bold;
-                        lbNom.HorizontalAlignment = HorizontalAlignment.Center;
-                        lbNom.Margin=new Thickness(15,0,15,0);
-                        lbNom.Foreground = Brushes.Black;
 
                         sp.Tag = person; 
                     }
@@ -273,11 +244,6 @@ namespace Principal
                     sp.Children.Add(rCara);
                     sp.Children.Add(lbNom);
                 }
-                /*else
-                {
-                    tb.Text = "Buida";
-                }*/
-                //ugPista.Children.Add(r);
 
                 ugPista.Children.Add(sp);
                 sp.SetValue(Grid.RowProperty, p.Fila);

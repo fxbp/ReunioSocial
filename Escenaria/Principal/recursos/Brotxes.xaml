@@ -18,5 +18,7 @@
 
     <!-- LLETRES -->
     <SolidColorBrush x:Key="FonsPistaResource" Color="#FF7BC588"/>
-    
+    <ImageBrush x:Key="fons" ImageSource="../img/fons.jpg"/>
+
+
 </ResourceDictionary>
