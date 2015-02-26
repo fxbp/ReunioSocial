@@ -18,15 +18,11 @@
 
     <!-- LLETRES -->
     <SolidColorBrush x:Key="FonsPistaResource" Color="#FF7BC588"/>
-<<<<<<< HEAD
     <SolidColorBrush x:Key="ForegroundHomes" Color="Blue"/>
     <SolidColorBrush x:Key="ForegroundDones" Color="Red"/>
     <SolidColorBrush x:Key="ForegroundCambrers" Color="Black"/>
     
     
-=======
     <ImageBrush x:Key="fons" ImageSource="../img/fons.jpg"/>
 
-
->>>>>>> a001a9b033eddaade75826046f5e20147bf4bc6e
 </ResourceDictionary>

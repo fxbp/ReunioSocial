@@ -57,7 +57,6 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
 
-<<<<<<< HEAD
     
     <!--********************************************
         Estils per els noms i valors de la graella 
@@ -115,7 +114,6 @@
         <Setter Property="BorderThickness" Value="0.5"></Setter>
         <Setter Property="BorderBrush" Value="Black"></Setter>
     </Style>
-=======
     <!-- LABELS -->
     <Style x:Key="nomsStyle" TargetType="Label">
         <Setter Property="FontSize" Value="28"/>
@@ -126,6 +124,4 @@
         <Setter Property="Foreground" Value="White"/>
     </Style>
 
-
->>>>>>> a001a9b033eddaade75826046f5e20147bf4bc6e
 </ResourceDictionary>

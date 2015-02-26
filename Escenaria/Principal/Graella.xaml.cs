@@ -147,12 +147,10 @@ namespace Principal
                 retorn = (UIElement)sexe;
 
             }
-            Border bd = new Border();
-            bd.Style = (Style)FindResource("Borders");
-            bd.Child = retorn;
-            bd.SetValue(Grid.RowProperty, fila);
-            bd.SetValue(Grid.ColumnProperty, col);
-            return (UIElement)bd;
+            
+            retorn.SetValue(Grid.RowProperty, fila);
+            retorn.SetValue(Grid.ColumnProperty, col);
+            return (UIElement)retorn;
         }
 
        
