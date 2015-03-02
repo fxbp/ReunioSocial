@@ -39,7 +39,7 @@
   <ItemGroup>
     <Reference Include="ReunioSocial, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ReunioSocial\ReunioSocial\bin\Debug\ReunioSocial.dll</HintPath>
+      <HintPath>llibreries\ReunioSocial.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -139,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\fons.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="llibreries\ReunioSocial.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
