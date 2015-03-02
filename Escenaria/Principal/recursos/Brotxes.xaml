@@ -7,6 +7,11 @@
         <GradientStop Color="#FFFFFFFF" Offset="0.567"/>
     </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="FonsSexeGradientResource" EndPoint="0.504,1.5" StartPoint="0.504,0.03">
+        <GradientStop Color="#FFA1B2B9" Offset="0"/>
+        <GradientStop Color="#FFEAAFAF" Offset="0.596"/>
+    </LinearGradientBrush>
+
     <RadialGradientBrush x:Key="FonsRadialResource"
           GradientOrigin="0.5,0.5" 
           Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
@@ -25,4 +30,23 @@
     
     <ImageBrush x:Key="fons" ImageSource="../img/fons.jpg"/>
 
+
+    <LinearGradientBrush x:Key="ColorNormal" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#FFF" Offset="0.0"/>
+                <GradientStop Color="#CCC" Offset="1.0"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ColorDeBordeNormal" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#CCC" Offset="0.0"/>
+                <GradientStop Color="#444" Offset="1.0"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    
 </ResourceDictionary>

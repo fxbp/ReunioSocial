@@ -13,8 +13,9 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="2" FontSize="50" Content="Cicle" Click="Button_Click"></Button>
-
+                <Button x:Name="btnCicle" Grid.Column="2" FontSize="50" Content="Cicle" Click="Button_Click" BorderThickness="0"/>
+                <Button x:Name="btnSimpaties" Grid.Column="0" FontSize="50" Content="Obrir Simpaties" Click="btnSimpaties_Click"/>
+                <Button x:Name="btnNouEscenari" Grid.Column="1" FontSize="50" Content="Nova Festa" Click="btnNouEscenari_Click"/> 
             </Grid>
         </StackPanel>
     </Viewbox>

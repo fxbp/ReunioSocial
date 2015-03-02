@@ -33,7 +33,7 @@ namespace Principal
         private List<string> dones;
         private Escenari escenari;
         private Random r;
-        Window gr;
+        private Graella gr;
     
 
         public WndEscenari(int nFiles, int nColumnes, int nDones, int nHomes, int nCambrers)
@@ -43,6 +43,7 @@ namespace Principal
             diccionariStacks = new Dictionary<string, StackPanel>();
             
             escenari.Moguda += escenari_Moguda;
+            
             EmplenaNomsDones();
             EmplenaNomsHomes();
 
@@ -55,16 +56,22 @@ namespace Principal
            // ugPista.Columns = nColumnes;
             GenerarPista(nFiles, nColumnes);
             GenerarSimpaties();
-           
+            btnSimpaties.IsEnabled = false;
 
             gr = new Graella(escenari);
-            
+            gr.Tancar += gr_Tancar;  
           
             gr.Show();
             gr.Focusable = true;
+
             CrearEscenariGrafic();
 
 
+        }
+
+        void gr_Tancar(bool tancar)
+        {
+            btnSimpaties.IsEnabled = true;
         }
 
              
@@ -219,13 +226,8 @@ namespace Principal
                 StackPanel sp = new StackPanel();      
                 Label lbNom = new Label();
                 Rectangle rCara = new Rectangle();
-                DrawingBrush db = (DrawingBrush)FindResource("terra");
                 lbNom.Style = (Style)FindResource("nomsStyle");                
-                rCara.Style = (Style)FindResource("rCaraStyle");           
-                if (db == null)sp.Background = Brushes.Black; 
-                else
-                {               
-                    //sp.Background = db;
+                rCara.Style = (Style)FindResource("rCaraStyle");
 
                     if (!p.Buida)
                     {
@@ -245,7 +247,7 @@ namespace Principal
                     
                     sp.Children.Add(rCara);
                     sp.Children.Add(lbNom);
-                }
+                
 
                 ugPista.Children.Add(sp);
                 sp.SetValue(Grid.RowProperty, p.Fila);
@@ -262,10 +264,24 @@ namespace Principal
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            btnCicle.IsEnabled = false;
             escenari.Cicle();
-          //mirar events.
+            btnCicle.IsEnabled = true;
+        }
+
+        private void btnSimpaties_Click(object sender, RoutedEventArgs e)
+        {
+            gr = new Graella(escenari);
+            gr.Tancar += gr_Tancar;  
+            btnSimpaties.IsEnabled = false;
+            gr.Show();
+        }
+
+        private void btnNouEscenari_Click(object sender, RoutedEventArgs e)
+        {
             
-           // ActualitzaEscenari();
+            Benvingut creaNouEscenari = new Benvingut();
+            creaNouEscenari.Show();this.Close();
         }
 
         /// <summary>
@@ -297,7 +313,7 @@ namespace Principal
             }
             else
             {
-                dir = ((Persona)actual).OnVaig(escenari);
+                dir = ((Persona)actual).DireccioActual;
                 Transicio(sp2, dir);
             }
 
@@ -383,6 +399,8 @@ namespace Principal
         {
             gr.Close();
         }
+
+        
 
 
         

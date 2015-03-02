@@ -1,400 +1,142 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <DrawingBrush x:Key="home" Viewbox="0,0,517,320" ViewboxUnits="Absolute">
+    <DrawingBrush x:Key="home" Viewbox="0,0,281,306" ViewboxUnits="Absolute" Stretch="Uniform">
         <DrawingBrush.Drawing>
             <DrawingGroup>
                 <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,136.971,33.141"/>
+                    </DrawingGroup.ClipGeometry>
                     <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,182.841,55"/>
+                        <MatrixTransform Matrix="-0.717713208381096,0.696338818762327,0.696338818762327,0.717713208381096,95.2732667148716,206.803444668281"/>
                     </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
+                    <GeometryDrawing Brush="#FF378A97" Geometry="M0,0.52933784 C0,-2.645077 20.565263,9.4950493 23.525857,9.4950493 L136.75715,4.1345652 C139.71774,4.1345652 111.00895,31.988398 108.04836,31.988398 L5.3606299,33.141001 C2.4000357,33.141001 0,30.567628 0,27.393214 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="0.739337367473571,0.673335174379929,-0.673335174379929,0.739337367473571,185.018683701336,210.049623509618"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF378A97" Geometry="M0,0.47327313 C0,-2.6835848 12.279371,10.985848 15.125212,10.985848 L128.46904,9.2027131 C131.31488,9.2027131 101.11987,37.893002 98.274031,37.893002 L5.1528488,32.904569 C2.3070089,32.904569 0,30.34543 0,27.188572 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,236,75.5"/>
+                    </DrawingGroup.ClipGeometry>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,45,230.5"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF378A97" Geometry="M127.72993,-1.9374778E-08 L185,77.602029 -3.6823948E-08,79.500001 60.50383,-1.9374778E-08 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,85,212.472"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFBDC3D3" Geometry="M104.99997,20.028313 C104.99997,29.693123 82.61427,37.528 55.000111,37.528 27.385952,37.528 -2.2486509E-07,27.193033 -2.2486509E-07,17.528222 -2.2486509E-07,14.680709 1.5524151,4.904631 5,2.5283893 13.253941,-3.1606246 35.521827,2.5286254 55.000111,2.5286254 72.61396,2.5286254 91.093247,2.7115317 99.999984,7.528536 105.05681,10.263403 104.99997,16.528257 104.99997,20.028313 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,-0.0106992765515306,0,1,45,17.0274312723954"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFFFFAE7">
                         <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="96.0795,112.5" RadiusY="112" RadiusX="95.5795"/>
+                            <EllipseGeometry Center="95,110" RadiusY="109.5" RadiusX="94.5"/>
                         </GeometryDrawing.Geometry>
                         <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
                         </GeometryDrawing.Pen>
                     </GeometryDrawing>
                 </DrawingGroup>
                 <DrawingGroup>
-                    <DrawingGroup.ClipGeometry>
-                        <RectangleGeometry Rect="0,0,30.641,36.79"/>
-                    </DrawingGroup.ClipGeometry>
                     <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,264,154.873"/>
+                        <MatrixTransform Matrix="1,0,0,1,47.303,7"/>
                     </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
+                    <GeometryDrawing Brush="#FFE2A66A" Geometry="M162.69707,85 C162.69707,96.330152 166.48605,68.362827 142.16174,74.652572 138.34936,75.638372 129.69267,82.254693 117.8889,82.049456 108.33899,81.883407 100.96631,73.427444 93.707287,74.948777 90.661474,75.587116 82.586531,67.100715 81.878548,67.100715 73.650982,67.100715 68.034809,72.206624 61.107418,73.202475 59.87351,73.379856 58.598002,73.426837 57.258726,73.29134 54.506445,73.012886 59.596812,77.886334 47.697,85 38.540144,90.473935 12.322289,98.259233&#xD;&#xA;7.6972304,99.999523 -8.8717971,106.234 8.4608391,76.945516 7.6972454,79.999666 2.6970028,99.999193 1.4964187,68.799521 8.6275252,52.986148 15.601644,37.520898 25.17453,30.218758 36.878404,27.100429 44.870442,24.971065 55.013527,9.8178622 64.782393,4.8984441 75.519725,-0.50867483 88.932942,2.1849108 100.86742,2.1849108 119.10091,2.1849108 117.00667,-2.8043727 132.96335,4.388188 141.22321,8.1113581 150.72654,14.944625 156.87813,17.100922 167.05226,20.66723&#xD;&#xA;183.81269,75.162546 187.6971,90 190.6011,101.09251 162.69707,80.953495 162.69707,85 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,85,97"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M0.5,12.5 A19.5,12,0,0,1,39.5,12.5 A19.5,12,0,0,1,0.5,12.5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,155,97"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M1,12.5 A19,11.5,0,0,1,39,12.5 A19,11.5,0,0,1,1,12.5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="2"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,99,105"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF594830">
                         <GeometryDrawing.Geometry>
-                            <PathGeometry Figures="M15.3205,0.5 L28.155429,27.3425 2.4855705,27.3425 z">
+                            <EllipseGeometry Center="8,5.5" RadiusY="5" RadiusX="7.5"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,169,107"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF594830">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="8,5.5" RadiusY="5" RadiusX="7.5"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,100,162"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF0A0803">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="42.5,15" RadiusY="14.5" RadiusX="42"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,100,157"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFFFFAE7">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="42.5,15" RadiusY="14.5" RadiusX="42"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="-0.999999376143589,0.00111701048899147,-0.00111701048899147,-0.999999376143589,155.033502516465,304.986018653195"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFBDC3D3">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M12.5,0 L23.325318,45 1.6746825,45 z">
                                 <PathGeometry.Transform>
-                                    <MatrixTransform Matrix="1.15470051967733,0,0,1.33333329922595,-2.37008946808812,-0.166666649612977"/>
-                                </PathGeometry.Transform>
-                            </PathGeometry>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,200.663"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="53.072,17.1685" RadiusY="16.168499999999995" RadiusX="52.072"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="2"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,200.663"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="53.072,10.7975" RadiusY="10.7975" RadiusX="53.072"/>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,110.342"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF4F4F5">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="22.5,15.8945" RadiusY="15.3945" RadiusX="22"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,290.641,110.342"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF4F4F5">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="22.5,15.8945" RadiusY="15.3945" RadiusX="22"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,240,125"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF232327" Geometry="M0.5,8.5655 A7,8.0655,0,0,1,14.5,8.5655 A7,8.0655,0,0,1,0.5,8.5655 z">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,305,125"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF313136" Geometry="M0.5,8.5655 A7,8.0655,0,0,1,14.5,8.5655 A7,8.0655,0,0,1,0.5,8.5655 z">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,265.641,196.663"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF0F0F0F">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="27.1795,15.2975" RadiusY="15.2975" RadiusX="27.17949999999999"/>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,264,207"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="35,10.129" RadiusY="10.129000000000005" RadiusX="35"/>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,195.663"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF0F0F0F">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="27.572,15.2975" RadiusY="15.2975" RadiusX="27.572000000000003"/>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,214,204"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="35,12.129" RadiusY="12.129000000000005" RadiusX="35"/>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.ClipGeometry>
-                        <RectangleGeometry Rect="0,0,15.641,12.742"/>
-                    </DrawingGroup.ClipGeometry>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,279,219.258"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9" Geometry="M0,6.371 A7.8205,6.371,0,0,1,15.641,6.371 A7.8205,6.371,0,0,1,0,6.371 z"/>
-                </DrawingGroup>
-            </DrawingGroup>
-        </DrawingBrush.Drawing>
-    </DrawingBrush>
-    <DrawingBrush x:Key="dona" Viewbox="0,0,517,320" ViewboxUnits="Absolute">
-        <DrawingBrush.Drawing>
-            <DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,182.841,62.558"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="96.0795,108.721" RadiusY="108.221" RadiusX="95.5795"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.ClipGeometry>
-                        <RectangleGeometry Rect="0,0,30.641,36.79"/>
-                    </DrawingGroup.ClipGeometry>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,264,154.873"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <PathGeometry Figures="M15.3205,0.5 L28.155429,27.3425 2.4855705,27.3425 z">
-                                <PathGeometry.Transform>
-                                    <MatrixTransform Matrix="1.15470051967733,0,0,1.33333329922595,-2.37008946808812,-0.166666649612977"/>
-                                </PathGeometry.Transform>
-                            </PathGeometry>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,200.663"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFBD182F">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="53.072,17.1685" RadiusY="17.168499999999995" RadiusX="53.072"/>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,200.663"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="53.072,10.7975" RadiusY="10.7975" RadiusX="53.072"/>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,110.342"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF4F4F5">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="22.5,15.8945" RadiusY="15.3945" RadiusX="22"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,119.317,22.803"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF570000" Geometry="M260.68307,57.197 C260.68307,69.173254 319.57284,241.02037 305.86624,250.50018 298.43855,255.63735 252.17164,266.78332 240.86589,235.50039 230.49555,206.80574 255.4402,136.95403 240.8661,110.49973 216.81876,66.850028 183.75844,60.499651 160.8656,60.499651 145.59715,60.499651 106.87748,68.88663 85.865475,100.49997 66.911632,129.01672 78.538701,199.84243 65.865422,230.50027 52.287065,263.34758 14.793287,254.9488 5.8649813,250.49991 -15.921166,239.64407 35.68274,157.64669&#xD;&#xA;35.68274,142.197 35.68274,107.95511 51.060265,0.49999997 130.86573,0.49999997 210.67119,0.49999997 260.68307,22.955111 260.68307,57.197 z">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,290.641,110.342"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF4F4F5">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="22.5,15.8945" RadiusY="15.3945" RadiusX="22"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,240,125"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF232327" Geometry="M0.5,8.5655 A7,8.0655,0,0,1,14.5,8.5655 A7,8.0655,0,0,1,0.5,8.5655 z">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,305,125"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF313136" Geometry="M0.5,8.5655 A7,8.0655,0,0,1,14.5,8.5655 A7,8.0655,0,0,1,0.5,8.5655 z">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-            </DrawingGroup>
-        </DrawingBrush.Drawing>
-    </DrawingBrush>
-    <DrawingBrush x:Key="cambrer" Viewbox="0,0,517,320" ViewboxUnits="Absolute">
-        <DrawingBrush.Drawing>
-            <DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,182.841,55"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="96.0795,112.5" RadiusY="112" RadiusX="95.5795"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.ClipGeometry>
-                        <RectangleGeometry Rect="0,0,30.641,36.79"/>
-                    </DrawingGroup.ClipGeometry>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,264,154.873"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <PathGeometry Figures="M15.3205,0.5 L28.155429,27.3425 2.4855705,27.3425 z">
-                                <PathGeometry.Transform>
-                                    <MatrixTransform Matrix="1.15470051967733,0,0,1.33333329922595,-2.37008946808812,-0.166666649612977"/>
-                                </PathGeometry.Transform>
-                            </PathGeometry>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,200.663"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="53.072,17.1685" RadiusY="16.168499999999995" RadiusX="52.072"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="2"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,218.215,196.663"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="55.8925,12.7975" RadiusY="12.7975" RadiusX="55.8925"/>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,223.856,110.342"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF4F4F5">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="22.5,15.8945" RadiusY="15.3945" RadiusX="22"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,290.641,110.342"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF4F4F5">
-                        <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="22.5,15.8945" RadiusY="15.3945" RadiusX="22"/>
-                        </GeometryDrawing.Geometry>
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,240,125"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF232327" Geometry="M0.5,8.5655 A7,8.0655,0,0,1,14.5,8.5655 A7,8.0655,0,0,1,0.5,8.5655 z">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,305,125"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF313136" Geometry="M0.5,8.5655 A7,8.0655,0,0,1,14.5,8.5655 A7,8.0655,0,0,1,0.5,8.5655 z">
-                        <GeometryDrawing.Pen>
-                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
-                        </GeometryDrawing.Pen>
-                    </GeometryDrawing>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.ClipGeometry>
-                        <RectangleGeometry Rect="0,0,15.641,12.742"/>
-                    </DrawingGroup.ClipGeometry>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,279,219.258"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFF5E5B9" Geometry="M0,6.371 A7.8205,6.371,0,0,1,15.641,6.371 A7.8205,6.371,0,0,1,0,6.371 z"/>
-                </DrawingGroup>
-                <DrawingGroup>
-                    <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="0.00966897339252645,0.999953254384191,-0.999953254384191,0.00966897339252645,282.110359190972,242.090051884869"/>
-                    </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF110E04">
-                        <GeometryDrawing.Geometry>
-                            <PathGeometry Figures="M35.049,0 L65.402324,56.25 4.6956756,56.25 z">
-                                <PathGeometry.Transform>
-                                    <MatrixTransform Matrix="1.15470060956683,0,0,1.33333333333333,-5.42209976622456,0"/>
+                                    <MatrixTransform Matrix="1.15470054956734,0,0,1.33333333333333,-1.93375680076625,0"/>
                                 </PathGeometry.Transform>
                             </PathGeometry>
                         </GeometryDrawing.Geometry>
@@ -402,193 +144,398 @@
                 </DrawingGroup>
                 <DrawingGroup>
                     <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="0.00966897339252645,0.999953254384191,0.999953254384191,-0.00966897339252645,273.696898168653,244.335195340827"/>
+                        <MatrixTransform Matrix="1,0,0,1,170,250"/>
                     </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF110E04">
-                        <GeometryDrawing.Geometry>
-                            <PathGeometry Figures="M34.4765,0 L64.334025,56.172 4.6189752,56.172 z">
-                                <PathGeometry.Transform>
-                                    <MatrixTransform Matrix="1.15470058300253,0,0,1.33333331232619,-5.33353331302002,0"/>
-                                </PathGeometry.Transform>
-                            </PathGeometry>
-                        </GeometryDrawing.Geometry>
-                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FFF0F0F0" Geometry="M18.266667,-4.3934627E-08 L25,25 -3.7641112E-16,25 8.7902555E-15,9.6437346 z"/>
                 </DrawingGroup>
                 <DrawingGroup>
-                    <DrawingGroup.ClipGeometry>
-                        <RectangleGeometry Rect="0,0,30.641,30"/>
-                    </DrawingGroup.ClipGeometry>
                     <DrawingGroup.Transform>
-                        <MatrixTransform Matrix="1,0,0,1,264,260"/>
+                        <MatrixTransform Matrix="1,0,0,1,160,265"/>
                     </DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF110E04">
+                    <GeometryDrawing Brush="#FFBDC3D3">
                         <GeometryDrawing.Geometry>
-                            <EllipseGeometry Center="15.3205,15" RadiusY="15" RadiusX="15.32050000000001"/>
+                            <RectangleGeometry RadiusY="4.5" RadiusX="4.5" Rect="0,0,40,15"/>
                         </GeometryDrawing.Geometry>
                     </GeometryDrawing>
                 </DrawingGroup>
             </DrawingGroup>
         </DrawingBrush.Drawing>
     </DrawingBrush>
-    <DrawingBrush x:Key="terra" Viewbox="0,0,321,320" ViewboxUnits="Absolute">
-		<DrawingBrush.Drawing>
-			<DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,80,80"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF7BC588">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-                <GeometryDrawing Brush="#FF7BC588">
-					<GeometryDrawing.Geometry>
-						<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-					</GeometryDrawing.Geometry>
-				</GeometryDrawing>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,160,0"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF7BC588">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,80,240"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF7BC588">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,240,80"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF7BC588">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,0,160"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF7BC588">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,160,160"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF7BC588">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,240,240"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FF7BC588">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,80,0"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFC0BEC5">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,240,0"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFC0BEC5">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,0,80"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFC0BEC5">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,160,80"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFC0BEC5">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,80,160"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFC0BEC5">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,240,160"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFC0BEC5">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,0,240"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFC0BEC5">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-				<DrawingGroup>
-					<DrawingGroup.Transform>
-						<MatrixTransform Matrix="1,0,0,1,160,240"/>
-					</DrawingGroup.Transform>
-                    <GeometryDrawing Brush="#FFC0BEC5">
-						<GeometryDrawing.Geometry>
-							<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0,0,80,80"/>
-						</GeometryDrawing.Geometry>
-					</GeometryDrawing>
-				</DrawingGroup>
-			</DrawingGroup>
-		</DrawingBrush.Drawing>
-	</DrawingBrush>
+    <DrawingBrush x:Key="dona" Viewbox="0,0,281,306" ViewboxUnits="Absolute" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,136.971,33.141"/>
+                    </DrawingGroup.ClipGeometry>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="-0.717713208381096,0.696338818762327,0.696338818762327,0.717713208381096,95.2732667148716,206.803444668281"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFC15EAF" Geometry="M0,0.52933784 C0,-2.645077 20.565263,9.4950493 23.525857,9.4950493 L136.75715,4.1345652 C139.71774,4.1345652 111.00895,31.988398 108.04836,31.988398 L5.3606299,33.141001 C2.4000357,33.141001 0,30.567628 0,27.393214 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="0.739337367473571,0.673335174379929,-0.673335174379929,0.739337367473571,185.018683701336,210.049623509618"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFC15EAF" Geometry="M0,0.47327313 C0,-2.6835848 12.279371,10.985848 15.125212,10.985848 L128.46904,9.2027131 C131.31488,9.2027131 101.11987,37.893002 98.274031,37.893002 L5.1528488,32.904569 C2.3070089,32.904569 0,30.34543 0,27.188572 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,236,75.5"/>
+                    </DrawingGroup.ClipGeometry>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,45,230.5"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFC15EAF" Geometry="M127.72993,-1.9374778E-08 L185,77.602029 -3.6823948E-08,79.500001 60.50383,-1.9374778E-08 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,100,205"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFF5E7F3" Geometry="M79.999977,16.010695 C79.999977,23.736775 62.944205,30 41.904846,30 20.865487,30 -1.7132578E-07,21.738195 -1.7132578E-07,14.012116 -1.7132578E-07,11.735805 1.1827924,3.9207773 3.8095238,2.0212023 10.098241,-2.5266131 27.064249,2.021391 41.904846,2.021391 55.324922,2.021391 69.404378,2.1676069 76.190464,6.0183351 80.043283,8.2045964 79.999977,13.21274 79.999977,16.010695 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,-1,123,272"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFFFFAE7">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M17.5,0 L32.655445,45 2.3445554,45 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="1.15470051596168,0,0,1.33333333333333,-2.70725930463137,0"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,-0.0106992765515306,0,1,70,33.7659982734344"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFFFFAE7">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="71.5,98.4705" RadiusY="97.9705" RadiusX="71"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,85,97"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M0.5,12.5 A19.5,12,0,0,1,39.5,12.5 A19.5,12,0,0,1,0.5,12.5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,155,97"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M1,12.5 A19,11.5,0,0,1,39,12.5 A19,11.5,0,0,1,1,12.5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="2"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,99,105"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF8492A6">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="8,5.5" RadiusY="5" RadiusX="7.5"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,169,107"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF8492A6">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="8,5.5" RadiusY="5" RadiusX="7.5"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,115,175"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFCF297C">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="30,8.5" RadiusY="8" RadiusX="29.5"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,100,157"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFFFFAE7">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="42.5,15" RadiusY="14.5" RadiusX="42"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,31.129,8.014"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF570F15">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M160.53566,228.34529 C160.53566,234.25599 155.53562,193.34568 165.5357,143.34623 173.84204,101.8153 166.63458,76.991045 154.9999,79.999493 151.18752,80.985282 142.53084,87.601529 130.72708,87.396294 121.17718,87.230247 135.53442,63.347082 110.53437,83.346848 108.10431,85.290871 96.242323,73.346965 95.534341,73.346965 87.306783,73.346965 80.873036,77.553572 73.945651,78.549412 72.711744,78.726791 71.436238,78.773772 70.096963,78.638276 67.344684,78.359825 72.435047,83.233219&#xD;&#xA;60.535246,90.346805 56.100851,92.997643 65.834181,132.64799 50.534758,168.34595 35.534636,203.34556 37.919639,252.44736 35.534365,253.34486 18.965352,259.57927 5.5249509,190.95725 2.9055538,192.70351 -12.094751,202.70375 7.2315735,109.00271 5.5340643,88.346991 4.1445571,71.439119 38.422099,18.347607 50.534249,18.347607 65.53428,18.347607 67.851766,15.165509 77.620623,10.246146 88.357945,4.8390876 101.77115,7.5326431 113.70562,7.5326431 131.93909,7.5326431&#xD;&#xA;149.87948,10.520214 165.53448,18.347607 175.5345,23.347549 194.45451,44.925042 199.06387,49.534298 221.91052,72.380442 225.53715,178.34584 209.06454,199.53256 199.55312,211.76594 198.33677,234.2306 195.53595,238.34603 192.8638,242.27239 182.19126,262.41922 175.53578,263.34538 166.12324,264.65521 160.53566,225.9749 160.53566,228.34529 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="0.99998729027251,0,0,1.00001107881889,3.33664221311753,-6.36181708596552"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,137,276"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFFFFAE7" Geometry="M0.5,5 A4.5,4.5,0,0,1,9.5,5 A4.5,4.5,0,0,1,0.5,5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,137,287"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFFFFAE7" Geometry="M0.5,5 A4.5,4.5,0,0,1,9.5,5 A4.5,4.5,0,0,1,0.5,5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,137,266"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFFFFAE7" Geometry="M0.5,5 A4.5,4.5,0,0,1,9.5,5 A4.5,4.5,0,0,1,0.5,5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <DrawingBrush x:Key="cambrer" Viewbox="0,0,281,306" ViewboxUnits="Absolute" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,136.971,33.141"/>
+                    </DrawingGroup.ClipGeometry>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="-0.717713208381096,0.696338818762327,0.696338818762327,0.717713208381096,95.2732667148716,206.803444668281"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M0.5,1.0133655 C0.5,-2.0652641 20.91512,9.7085447 23.854099,9.7085447 L136.25871,4.5098084 C139.19769,4.5098084 110.69849,31.523177 107.75951,31.523177 L5.821493,32.641001 C2.8825135,32.641001 0.5,30.145278 0.5,27.066648 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF191313" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="0.739337367473571,0.673335174379929,-0.673335174379929,0.739337367473571,185.018683701336,210.049623509618"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M0.5,0.96078341 C0.5,-2.1127647 12.683929,11.19593 15.507651,11.19593 L127.97051,9.4598526 C130.79423,9.4598526 100.83391,37.393002 98.010192,37.393002 L5.612798,32.536214 C2.7890776,32.536214 0.5,30.044611 0.5,26.971063 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF191313" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,236,75.5"/>
+                    </DrawingGroup.ClipGeometry>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,45,230.5"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M127.5395,0.49999998 L184.5,77.125903 0.49999996,79.000001 60.676783,0.49999998 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF191313" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,-0.0106992765515306,0,1,70,60.7969982734344"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFF7EFD1">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="71.5,82.955" RadiusY="82.954999999999984" RadiusX="71.5"/>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,85,97"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M0.5,12.5 A19.5,12,0,0,1,39.5,12.5 A19.5,12,0,0,1,0.5,12.5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,155,97"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="White" Geometry="M1,12.5 A19,11.5,0,0,1,39,12.5 A19,11.5,0,0,1,1,12.5 z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="2"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,99,105"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF2D2F32">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="8,5.5" RadiusY="5" RadiusX="7.5"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,169,107"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF2D2F32">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="8,5.5" RadiusY="5" RadiusX="7.5"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,115,175"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF150F12">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="30,8.5" RadiusY="8" RadiusX="29.5"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,100,157"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFF7EFD1">
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="42.5,15" RadiusY="14.5" RadiusX="42"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,53.845,22.525"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF291B1C">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M175.53705,133.34594 C172.38681,135.70856 162.3407,78.551764 150.53694,78.346529 140.98704,78.180482 135.53442,63.347082 110.53437,83.346848 108.10431,85.290871 96.244786,78.346554 95.536804,78.346554 87.309246,78.346554 80.873036,77.553572 73.945651,78.549412 72.711744,78.726791 71.436238,78.773772 70.096963,78.638276 67.344684,78.359825 62.921579,87.449238 60.536304,88.346746 43.967292,94.581156 38.155766,131.59956 35.536369,133.34583 20.536064,143.34606 0.541341,21.086583&#xD;&#xA;60.536014,28.347067 75.427394,30.149205 80.767462,33.266553 90.536319,28.34719 101.27364,22.940132 113.6022,23.347558 125.53667,23.347558 143.77014,23.347558 165.5369,13.347481 175.537,38.347189 179.68935,48.727835 194.61526,61.893608 195.53709,68.346645 200.53683,103.34624 195.53732,118.34611 175.53705,133.34594 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="0.999994066013918,0,0,1.00001117434065,-19.381237309959,-20.8724292956007"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFFDFBFB" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="-0.0204014834379759,0.999791868077316,-0.999791868077316,-0.0204014834379759,128.802379942923,215.860147939005"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFF5E7F3">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M15,0 L27.990381,26.25 2.0096189,26.25 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="1.15470053261313,0,0,1.33333333333333,-2.32050812684799,0"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,37.628,49.994"/>
+                    </DrawingGroup.ClipGeometry>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="0.0266654698905887,-0.999644413136748,0.999644413136748,0.0266654698905887,137.107204454299,250.0277532379"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF191313">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M18.814,0 L35.107402,37.4955 2.5205981,37.4955 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="1.15470050389465,0,0,1.33333338108212,-2.91053570534035,0"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,130,227"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF191313" Geometry="M0,5 A7.5,5,0,0,1,15,5 A7.5,5,0,0,1,0,5 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,37.628,49.994"/>
+                    </DrawingGroup.ClipGeometry>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="-0.0371146270315271,0.999311014879907,-0.999311014879907,-0.0371146270315271,142.275052031924,214.013716897956"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF191313">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M18.814,0 L35.107402,37.4955 2.5205981,37.4955 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="1.15470050389465,0,0,1.33333338108212,-2.91053570534035,0"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
 </ResourceDictionary>

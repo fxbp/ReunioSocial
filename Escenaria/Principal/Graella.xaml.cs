@@ -21,7 +21,8 @@ namespace Principal
     /// </summary>
     public partial class Graella : Window
     {
-
+        public delegate void TancarFinestraEventHandler(bool tancar);
+        public event TancarFinestraEventHandler Tancar;
         Dictionary<string, int> files;
         Dictionary<string, int> columnes;
         Escenari escenari;
@@ -72,9 +73,6 @@ namespace Principal
         {
             GeneraColumnes();
             GeneraFiles();
-
-            // Assigno estils a la graella visual. 
-            grdSimpaties.Style = (Style)FindResource("GridGraellaStyle");
 
             UIElement element;
             for (int i = 0; i < matriuSlots.GetLength(0); i++)
@@ -313,6 +311,12 @@ namespace Principal
 
 
 
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            //llença esdeveniment tancar
+            Tancar(true);
         }
        
 

@@ -61,12 +61,6 @@
     <!--********************************************
         Estils per els noms i valors de la graella 
     -->
-    
-    <!-- GRID -->
-    <Style x:Key="GridGraellaStyle" TargetType="Grid">
-        <Setter Property="Background" Value="{StaticResource FonsGradientResource}"/>
-    </Style>
-    
     <!-- TEXTBLOCK  -->
     <Style x:Key="NomsColumnesStyle" TargetType="TextBlock">
         <Setter Property="TextAlignment" Value="Center"/>
@@ -105,6 +99,7 @@
         <Setter Property="MaxWidth" Value="25"/>
         <Setter Property="Width" Value="25"/>
         <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="Background" Value="{StaticResource FonsSexeGradientResource}"/>
         <Setter Property="FontSize" Value="14"/>
     </Style>
     
@@ -123,5 +118,28 @@
         <Setter Property="Margin" Value="15,0,15,0"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
+    <!-- BOTONS -->
+    <Style x:Key="botoStyle" TargetType="Button">
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="Button">
+                    <UserControl>
+
+                        <Grid x:Name="LayoutRoot">
+                            <Rectangle HorizontalAlignment="Left" Height="110" RadiusY="24.5" RadiusX="24.5" Stroke="#FFFDFBFB" VerticalAlignment="Top" Width="260" Margin="-5,0,0,0">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF4A6815"/>
+                                        <GradientStop Color="#FFE6A5A5" Offset="0.914"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </Grid>
+                    </UserControl>
+                </ControlTemplate>
+        </Setter.Value>
+    </Setter>
+    </Style>
+
 
 </ResourceDictionary>
