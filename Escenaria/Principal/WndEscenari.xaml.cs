@@ -25,6 +25,8 @@ namespace Principal
     /// </summary>
     public partial class WndEscenari : Window
     {
+        public const int ALTSTACK = 130;
+        public const int AMPLESTACK = 170;
         public const double SEGONSPAUSA = 2;
         private const string FITXERHOMES = @"../../DataSource/Homes.txt";
         private const string FITXERDONES = @"../../DataSource/dones.txt";
@@ -208,13 +210,13 @@ namespace Principal
             for(int i=0;i<files;i++)
             {
                 RowDefinition ro = new RowDefinition();
-                ro.Height = new GridLength(130);
+                ro.Height = new GridLength(ALTSTACK);
                 ugPista.RowDefinitions.Add(ro);
             }  
             for(int j=0;j<columnes;j++)
             {
                 ColumnDefinition co = new ColumnDefinition();
-                co.Width = new GridLength(170);
+                co.Width = new GridLength(AMPLESTACK);
                 ugPista.ColumnDefinitions.Add(co);
             }
         }
@@ -223,7 +225,8 @@ namespace Principal
             ugPista.Children.Clear();
             foreach (Posicio p in escenari.EscenariToMatriusPosicions)
             {
-                StackPanel sp = new StackPanel();      
+                StackPanel sp = new StackPanel();
+                //sp.SetValue(Grid.ZIndexProperty, 0);
                 Label lbNom = new Label();
                 Rectangle rCara = new Rectangle();
                 lbNom.Style = (Style)FindResource("nomsStyle");                
@@ -250,6 +253,9 @@ namespace Principal
                 
 
                 ugPista.Children.Add(sp);
+                sp.SetValue(Grid.HorizontalAlignmentProperty, HorizontalAlignment.Center);
+                sp.SetValue(Grid.VerticalAlignmentProperty, VerticalAlignment.Center);
+                //sp.SetValue(Grid.MarginProperty, new Thickness(0));
                 sp.SetValue(Grid.RowProperty, p.Fila);
                 sp.SetValue(Grid.ColumnProperty, p.Columna);
                 diccionariStacks.Add((p.Fila.ToString() + "," + p.Columna.ToString()), sp);
@@ -292,10 +298,10 @@ namespace Principal
         void escenari_Moguda(Posicio anterior, Posicio actual)
         {
 
-            this.Dispatcher.Invoke(DispatcherPriority.Normal,
-                    new Action(() => CanviarPosicions(anterior, actual)));
-       
-          
+            //this.Dispatcher.Invoke(DispatcherPriority.Normal,
+            //        new Action(() => CanviarPosicions(anterior, actual)));
+
+            CanviarPosicions(anterior, actual);
         }
 
 
@@ -304,17 +310,18 @@ namespace Principal
         {
             StackPanel sp = diccionariStacks[anterior.Fila.ToString() + "," + anterior.Columna.ToString()];
             StackPanel sp2 = diccionariStacks[actual.Fila.ToString() + "," + actual.Columna.ToString()];
-
+           
             Direccio dir;
             if (!anterior.Buida)
             {
                 dir = ((Persona)anterior).DireccioActual;
                 Transicio(sp, dir);
+                
             }
             else
             {
                 dir = ((Persona)actual).DireccioActual;
-                Transicio(sp2, dir);
+                Transicio(sp2, dir);   
             }
 
             ugPista.Children.Remove(sp);
@@ -340,16 +347,16 @@ namespace Principal
             switch (dir)
             {
                 case Direccio.Amunt:
-                    th.Top = -130;
+                    th.Top = -ALTSTACK *2;
                     break;
                 case Direccio.Avall:
-                    th.Bottom = -130;
+                    th.Bottom = -ALTSTACK * 2;
                     break;
                 case Direccio.Dreta:
-                    th.Right = -170 * 2;
+                    th.Right = -AMPLESTACK * 2;
                     break;
                 case Direccio.Esquerra:
-                    th.Left = -170 * 2;
+                    th.Left = -AMPLESTACK * 2;
                     break;
 
             }
@@ -360,22 +367,28 @@ namespace Principal
         {
             Storyboard story = new Storyboard();
             ThicknessAnimation animacioStack1 = new ThicknessAnimation();
-
+            Thickness marginOri = sp.Margin;
             Thickness margin = RetornaDireccioMargin(dir);
 
-            story.Children.Add(animacioStack1);
+           
 
-            sp.SetValue(Grid.ZIndexProperty, 100);
+            story.Children.Add(animacioStack1);
+            
+            //sp.SetValue(Grid.ZIndexProperty, 10);
+            animacioStack1.From = marginOri;
             animacioStack1.To = margin;
             animacioStack1.Duration = TimeSpan.FromSeconds(SEGONSPAUSA / 2);
+            animacioStack1.FillBehavior = FillBehavior.HoldEnd;
 
             Storyboard.SetTarget(animacioStack1, sp);
-            Storyboard.SetTargetProperty(animacioStack1, new PropertyPath(StackPanel.MarginProperty));
+            Storyboard.SetTargetProperty(animacioStack1, new PropertyPath(Grid.MarginProperty));
 
             story.Begin();
             Pausa(SEGONSPAUSA);
+           // Thread.Sleep(TimeSpan.FromSeconds(SEGONSPAUSA));
+            
 
-            sp.BeginAnimation(StackPanel.MarginProperty, null);
+            sp.BeginAnimation(Grid.MarginProperty, null);
         }
 
         private void Pausa(double segons)
